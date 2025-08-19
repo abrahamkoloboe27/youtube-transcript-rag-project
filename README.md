@@ -218,3 +218,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Only text chunks and embeddings are stored in Qdrant
 - No personal data is collected or stored by the application
 - API keys are stored locally in `.env` file
+
+## ⚠️ Limitations
+
+### YouTube IP Blocking
+When deployed on cloud platforms (Streamlit Cloud, Render, etc.), YouTube often blocks requests for transcripts due to their restrictions on cloud server IPs.
+
+**This is not a bug in the application but a limitation imposed by YouTube.**
+
+**Workarounds:**
+- Use videos that have manually added subtitles (more likely to be accessible)
+- Run the application locally on your machine
+- Consider alternative data sources for production deployments
