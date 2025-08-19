@@ -23,10 +23,7 @@ RUN --mount=type=cache,target=/home/app/.cache/uv \
 # Étape 2 : Image de production
 FROM python:3.12-slim
 
-# Installer les dépendances système nécessaires (si besoin)
-# RUN apt-get update && apt-get install -y --no-install-recommends \
-#     build-essential \
-#     && rm -rf /var/lib/apt/lists/*
+
 
 # Créer l'utilisateur non-root
 RUN useradd --create-home --shell /bin/bash app
