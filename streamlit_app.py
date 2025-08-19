@@ -176,7 +176,7 @@ with st.sidebar:
                         logger.info(f"Fetching transcript for {video_id}")
                         try:
                             # Essayer plusieurs langues courantes
-                            transcript_languages = ['en', 'fr', 'es', 'de']
+                            transcript_languages = ['en', 'fr', 'es', 'de', 'hi', 'te']
                             transcript = None
                             for lang in transcript_languages:
                                 try:
