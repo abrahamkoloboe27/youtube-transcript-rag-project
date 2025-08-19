@@ -55,14 +55,14 @@ def retrieve_relevant_chunks(
             )
         )
     
-    if language_code:
-        logger.info(f"Application du filtre pour la langue : {language_code}")
-        query_filter_conditions.append(
-            FieldCondition(
-                key="language",
-                match=MatchValue(value=language_code)
-            )
-        )
+    # if language_code:
+    #     logger.info(f"Application du filtre pour la langue : {language_code}")
+    #     query_filter_conditions.append(
+    #         FieldCondition(
+    #             key="language",
+    #             match=MatchValue(value=language_code)
+    #         )
+    #     )
 
     query_filter = None
     if query_filter_conditions:

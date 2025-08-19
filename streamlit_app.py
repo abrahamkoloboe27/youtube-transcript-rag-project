@@ -1,7 +1,7 @@
 # streamlit_app.py - Version complète mise à jour
 
 import streamlit as st
-from src.youtube import extract_video_id, get_available_transcript_languages, save_txt_with_language
+from src.youtube import extract_video_id
 from src.embedding import process_and_store_transcript_txt
 from src.qdrant import get_qdrant_client, check_video_exists
 from src.retrieve import retrieve_relevant_chunks
@@ -93,31 +93,26 @@ with st.sidebar:
     
     # Input URL
     youtube_url = st.text_input("🔗 URL YouTube", placeholder="https://www.youtube.com/watch?v=...")
-    
-    # Afficher les langues disponibles une fois l'URL saisie
-    if youtube_url and st.session_state.available_languages:
-        language_options = {f"{lang['language']} ({lang['language_code']})": lang['language_code'] 
-                          for lang in st.session_state.available_languages}
-        selected_language_display = st.selectbox(
-            "🌍 Langue de transcription",
-            options=list(language_options.keys()),
-            index=0
-        )
-        st.session_state.selected_language = language_options[selected_language_display]
-        
-        # Afficher les détails sur la langue sélectionnée
-        selected_lang_info = next((lang for lang in st.session_state.available_languages 
-                                 if lang['language_code'] == st.session_state.selected_language), None)
-        if selected_lang_info:
-            lang_type = "générée" if selected_lang_info['is_generated'] else "originale"
-            st.caption(f"Langue {lang_type}")
-    
+
+    # Ajouter un sélecteur de langue pour la réponse (pas pour l'ingestion)
+    response_language = st.selectbox(
+        "🌍 Langue de réponse",
+        options=["Français", "English", "Español", "Deutsch"],
+        index=0
+    )
+
+    # Convertir en code langue
+    language_codes = {"Français": "fr", "English": "en", "Español": "es", "Deutsch": "de"}
+    selected_response_language = language_codes[response_language]
+
     # Sélecteur de modèle
     selected_model = st.selectbox(
         "🤖 Modèle de réponse",
         options=AVAILABLE_MODELS,
         index=AVAILABLE_MODELS.index(DEFAULT_MODEL) if DEFAULT_MODEL in AVAILABLE_MODELS else 0
     )
+ 
+
     
     st.markdown("---")
     
@@ -143,136 +138,75 @@ with st.sidebar:
     
     st.markdown("---")
     
+    # Dans streamlit_app.py - Remplacer la section de détection des langues par :
+
     if youtube_url:
         logger.info(f"Traitement de l'URL YouTube: {youtube_url}")
         
-        # Extraire l'ID et vérifier les langues disponibles
+        # Extraire l'ID de la vidéo
         video_id = extract_video_id(youtube_url)
-        if video_id and not st.session_state.available_languages:
-            with st.spinner("🔍 Récupération des langues disponibles..."):
-                st.session_state.available_languages = get_available_transcript_languages(video_id)
-                if st.session_state.available_languages:
-                    st.success(f"✅ {len(st.session_state.available_languages)} langues trouvées")
-                else:
-                    st.warning("⚠️ Aucune transcription disponible")
         
         if not video_id:
             st.error("❌ URL YouTube invalide")
             logger.warning(f"URL YouTube invalide fournie: {youtube_url}")
-        elif st.session_state.available_languages:
-            # Vérifier si la vidéo existe déjà avec la langue sélectionnée
-            logger.info(f"Vérification de l'existence de la vidéo {video_id} en {st.session_state.selected_language} dans Qdrant...")
-            
-            # Vérifier si la vidéo existe déjà
+        else:
+            # Vérifier si la vidéo existe déjà (dans la langue par défaut ou la langue sélectionnée)
+            logger.info(f"Vérification de l'existence de la vidéo {video_id} dans Qdrant...")
             video_exists = check_video_exists(qdrant_client, COLLECTION_NAME, video_id)
-            if video_exists:
-                # Vérifier si la langue spécifique existe
-                try:
-                    count_result = qdrant_client.count(
-                        collection_name=COLLECTION_NAME,
-                        count_filter=models.Filter(
-                            must=[
-                                models.FieldCondition(
-                                    key="video_id",
-                                    match=models.MatchValue(value=video_id)
-                                ),
-                                models.FieldCondition(
-                                    key="language",
-                                    match=models.MatchValue(value=st.session_state.selected_language)
-                                )
-                            ]
-                        )
-                    )
-                    language_exists = count_result.count > 0
-                    
-                    if language_exists:
-                        st.success(f"✅ Vidéo déjà traitée en {st.session_state.selected_language} (ID: {video_id})")
-                        logger.info(f"Vidéo {video_id} déjà présente en {st.session_state.selected_language} dans la base")
-                        st.session_state.current_video_id = video_id
-                        st.session_state.video_processed = True
-                    else:
-                        st.info(f"🔄 Vidéo traitée mais pas en {st.session_state.selected_language} - Lancement de l'ingestion...")
-                        logger.info(f"Vidéo {video_id} existe mais pas en {st.session_state.selected_language}")
-                        video_exists = False  # Forcer le traitement
-                except Exception as e:
-                    logger.error(f"Erreur lors de la vérification de la langue: {e}")
-                    video_exists = False
-            else:
-                st.info("🔄 Vidéo non traitée - Lancement de l'ingestion...")
-                logger.info(f"Vidéo {video_id} non trouvée, démarrage de l'ingestion...")
             
-            if not video_exists:
-                # Processus d'ingestion
+            if video_exists:
+                st.success(f"✅ Vidéo déjà traitée (ID: {video_id})")
+                logger.info(f"Vidéo {video_id} déjà présente dans la base")
+                st.session_state.current_video_id = video_id
+                st.session_state.video_processed = True
+            else:
+                st.warning("🔄 Vidéo non traitée - Lancement de l'ingestion...")
+                logger.info(f"Vidéo {video_id} non trouvée, démarrage de l'ingestion...")
+                
+                # Processus d'ingestion - garder l'approche originale
                 try:
                     with st.spinner("📥 Récupération de la transcription..."):
-                        logger.info(f"Récupération de la transcription pour {video_id} en {st.session_state.selected_language}")
-                        # Essayer d'abord la langue sélectionnée, sinon prendre la première disponible
-                        try:
-                            transcript = ytt.fetch(video_id=video_id, languages=[st.session_state.selected_language])
-                        except:
-                            # Si la langue spécifique n'est pas disponible, prendre la première
-                            first_lang = st.session_state.available_languages[0]['language_code']
-                            st.warning(f"Langue {st.session_state.selected_language} non disponible, utilisation de {first_lang}")
-                            st.session_state.selected_language = first_lang
-                            transcript = ytt.fetch(video_id=video_id, languages=[st.session_state.selected_language])
-                        
+                        logger.info(f"Récupération de la transcription pour {video_id}")
+                        # Utiliser l'approche originale
+                        transcript = ytt.fetch(video_id=video_id, languages=['en', 'fr'])  # ou juste ['en']
                         logger.info(f"Transcription récupérée ({len(transcript)} segments)")
                     
                     with st.spinner("💾 Sauvegarde de la transcription..."):
-                        logger.info(f"Sauvegarde de la transcription pour {video_id} en {st.session_state.selected_language}")
+                        logger.info(f"Sauvegarde de la transcription pour {video_id}")
                         os.makedirs("./downloads", exist_ok=True)
-                        txt_file_name = f"{video_id}_{st.session_state.selected_language}.txt"
+                        txt_file_name = f"{video_id}.txt"
                         txt_file_path = f"./downloads/{txt_file_name}"
                         
                         try:
-                            save_txt_with_language(transcript, video_id, st.session_state.selected_language, txt_file_name)
+                            from src.youtube import save_txt
+                            save_txt(transcript, out_path=txt_file_name)
                             logger.info(f"Transcription sauvegardée dans {txt_file_path}")
                         except Exception as e:
                             logger.error(f"Erreur lors de la sauvegarde de la transcription pour {video_id}: {e}")
                             raise
                     
                     with st.spinner("🧠 Traitement et stockage dans Qdrant..."):
-                        logger.info(f"Traitement et stockage de {video_id} en {st.session_state.selected_language} dans Qdrant")
+                        logger.info(f"Traitement et stockage de {video_id} dans Qdrant")
+                        # Utiliser la version originale sans language_code
+                        from src.embedding import process_and_store_transcript_txt
                         process_and_store_transcript_txt(
                             txt_file_path=txt_file_path,
                             collection_name=COLLECTION_NAME,
                             video_id=video_id,
-                            language_code=st.session_state.selected_language,
                             chunk_size=700,
                             chunk_overlap=100
                         )
                         
                     with st.spinner("🔍 Vérification du stockage..."):
-                        # Vérifier le stockage
-                        try:
-                            count_result = qdrant_client.count(
-                                collection_name=COLLECTION_NAME,
-                                count_filter=models.Filter(
-                                    must=[
-                                        models.FieldCondition(
-                                            key="video_id",
-                                            match=models.MatchValue(value=video_id)
-                                        ),
-                                        models.FieldCondition(
-                                            key="language",
-                                            match=models.MatchValue(value=st.session_state.selected_language)
-                                        )
-                                    ]
-                                )
-                            )
-                            language_stored = count_result.count > 0
-                            
-                            if language_stored:
-                                logger.info(f"Vidéo {video_id} en {st.session_state.selected_language} confirmée dans Qdrant")
-                                st.success("✅ Vidéo traitée et stockée avec succès!")
-                                st.session_state.current_video_id = video_id
-                                st.session_state.video_processed = True
-                            else:
-                                logger.warning(f"Vidéo {video_id} en {st.session_state.selected_language} non trouvée dans Qdrant après ingestion")
-                                st.warning("⚠️ Problème lors du stockage")
-                                st.session_state.video_processed = False
-                        except Exception as e:
-                            logger.error(f"Erreur lors de la vérification du stockage: {e}")
+                        video_stored = check_video_exists(qdrant_client, COLLECTION_NAME, video_id)
+                        if video_stored:
+                            logger.info(f"Vidéo {video_id} confirmée dans Qdrant")
+                            st.success("✅ Vidéo traitée et stockée avec succès!")
+                            st.session_state.current_video_id = video_id
+                            st.session_state.video_processed = True
+                        else:
+                            logger.warning(f"Vidéo {video_id} non trouvée dans Qdrant après ingestion")
+                            st.warning("⚠️ Problème lors du stockage - aucun chunk trouvé")
                             st.session_state.video_processed = False
                     
                 except Exception as e:
@@ -280,7 +214,6 @@ with st.sidebar:
                     st.error(error_msg)
                     logger.error(f"Erreur lors du traitement de la vidéo {video_id}: {e}")
                     st.session_state.video_processed = False
-
 # === CHAT INTERFACE ===
 st.title("💬 Chat avec votre vidéo YouTube")
 
@@ -317,8 +250,7 @@ if prompt := st.chat_input("Posez votre question sur la vidéo...",
                         query=prompt,
                         collection_name=COLLECTION_NAME,
                         video_id=st.session_state.current_video_id,
-                        language_code=st.session_state.selected_language,  # Utiliser la langue sélectionnée
-                        top_k=5
+                        top_k=10
                     )
                     logger.info(f"Trouvé {len(retrieved_chunks)} chunks pertinents")
                 
@@ -326,18 +258,19 @@ if prompt := st.chat_input("Posez votre question sur la vidéo...",
                     full_response = "❌ Je n'ai trouvé aucune information pertinente dans la vidéo pour répondre à votre question."
                     logger.info("Aucun chunk pertinent trouvé pour la requête")
                 else:
-                    # Générer la réponse avec l'historique de conversation
                     with st.spinner("🤖 Génération de la réponse..."):
                         logger.info(f"Génération de réponse avec le modèle {selected_model}")
+                        # Vous pouvez ajouter une instruction dans le prompt pour la langue de réponse
+                        prompt_with_language = f"Réponds en {response_language}: {prompt}"
+                        
                         full_response = answer_question_with_grok(
-                            question=prompt,
+                            question=prompt_with_language,
                             chunks=retrieved_chunks,
                             model=selected_model,
                             max_tokens=st.session_state.max_tokens,
                             temperature=st.session_state.temperature,
                             conversation_history=st.session_state.messages
                         )
-                        logger.info("Réponse générée avec succès")
             
             # Afficher la réponse progressivement (effet de frappe)
             for chunk in full_response.split():

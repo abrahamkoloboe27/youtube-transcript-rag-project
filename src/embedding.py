@@ -77,7 +77,6 @@ def process_and_store_transcript_txt(
     txt_file_path: str,
     collection_name: str,
     video_id: str,
-    language_code: str = "en",
     chunk_size: int = 700,
     chunk_overlap: int = 100
 ):
@@ -88,11 +87,10 @@ def process_and_store_transcript_txt(
         txt_file_path: Path to the TXT file.
         collection_name: Name of the Qdrant collection.
         video_id: The YouTube video ID (used for payload).
-        language_code: The language code of the transcript.
         chunk_size: Size of text chunks.
         chunk_overlap: Overlap between chunks.
     """
-    logger.info(f"Starting processing for TXT file: {txt_file_path} (Language: {language_code})")
+    logger.info(f"Starting processing for TXT file: {txt_file_path}")
 
     # 1. Charger le texte
     try:
@@ -118,12 +116,13 @@ def process_and_store_transcript_txt(
     # 5. Préparer les points pour Qdrant
     points = []
     for i, (chunk, vector) in enumerate(zip(text_chunks, embeddings)):
-        point_id = str(uuid.uuid4())
+        # Créer un ID unique pour chaque point
+        point_id = str(uuid.uuid4()) # Ou utiliser video_id + index si préférable
         payload = {
             "video_id": video_id,
-            "language": language_code,
             "chunk_index": i,
-            "text": chunk
+            "text": chunk # Optionnel: stocker le texte brut
+            # Ajouter d'autres métadonnées si nécessaire (titre, timestamp, etc.)
         }
         point = PointStruct(id=point_id, vector=vector, payload=payload)
         points.append(point)
@@ -132,6 +131,7 @@ def process_and_store_transcript_txt(
     qdrant_client = get_qdrant_client()
 
     # 7. Créer la collection si elle n'existe pas
+    # On suppose que la dimension est connue (768 pour all-mpnet-base-v2)
     create_collection_if_not_exists(qdrant_client, collection_name, EMBEDDING_DIMENSION)
 
     # 8. Insérer les points dans Qdrant

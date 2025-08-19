@@ -531,3 +531,367 @@ The video is no longer available
 
 If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
 2025-08-19 13:10:59,428 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 13:15:16,749 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 13:15:16,769 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 13:15:16,778 - __streamlit_app__ - INFO - Traitement de l'URL YouTube: https://www.youtube.com/watch?v=OLXkGB7kr
+2025-08-19 13:15:16,778 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=OLXkGB7kr
+2025-08-19 13:15:16,778 - __streamlit_app__ - INFO - Vérification de l'existence de la vidéo OLXkGB7kr dans Qdrant...
+2025-08-19 13:15:17,464 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 404 Not Found"
+2025-08-19 13:15:17,490 - __qdrant__ - ERROR - Error checking existence of video OLXkGB7kr: Unexpected Response: 404 (Not Found)
+Raw response content:
+b'{"status":{"error":"Not found: Collection `youtube_transcripts` doesn\'t exist!"},"time":6.235e-6}'
+2025-08-19 13:15:17,491 - __streamlit_app__ - INFO - Vidéo OLXkGB7kr non trouvée, démarrage de l'ingestion...
+2025-08-19 13:15:17,492 - __streamlit_app__ - INFO - Récupération de la transcription pour OLXkGB7kr
+2025-08-19 13:15:18,610 - __streamlit_app__ - ERROR - Erreur lors du traitement de la vidéo OLXkGB7kr: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=OLXkGB7kr! This is most likely caused by:
+
+The video is no longer available
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+2025-08-19 13:15:18,615 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 13:15:32,320 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 13:15:32,323 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 13:15:32,328 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 13:15:34,494 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 13:15:34,497 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 13:15:34,501 - __streamlit_app__ - INFO - Traitement de l'URL YouTube: https://www.youtube.com/watch?v=OLXkGB7kr
+2025-08-19 13:15:34,501 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=OLXkGB7kr
+2025-08-19 13:15:34,502 - __streamlit_app__ - INFO - Vérification de l'existence de la vidéo OLXkGB7kr dans Qdrant...
+2025-08-19 13:15:34,905 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 404 Not Found"
+2025-08-19 13:15:34,907 - __qdrant__ - ERROR - Error checking existence of video OLXkGB7kr: Unexpected Response: 404 (Not Found)
+Raw response content:
+b'{"status":{"error":"Not found: Collection `youtube_transcripts` doesn\'t exist!"},"time":7.236e-6}'
+2025-08-19 13:15:34,908 - __streamlit_app__ - INFO - Vidéo OLXkGB7kr non trouvée, démarrage de l'ingestion...
+2025-08-19 13:15:34,910 - __streamlit_app__ - INFO - Récupération de la transcription pour OLXkGB7kr
+2025-08-19 13:15:36,122 - __streamlit_app__ - ERROR - Erreur lors du traitement de la vidéo OLXkGB7kr: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=OLXkGB7kr! This is most likely caused by:
+
+The video is no longer available
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+2025-08-19 13:15:36,124 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 13:19:48,128 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 13:19:48,132 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 13:20:19,988 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 13:20:19,990 - __streamlit_app__ - INFO - Chargement du modèle d'embedding...
+2025-08-19 13:20:19,991 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-19 13:20:20,000 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-19 13:20:20,000 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-19 13:20:27,290 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-19 13:20:27,292 - __streamlit_app__ - INFO - Modèle d'embedding chargé avec succès
+2025-08-19 13:20:27,298 - __streamlit_app__ - INFO - Initialisation du client Qdrant...
+2025-08-19 13:20:27,762 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-19 13:20:28,176 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-19 13:20:28,211 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[]
+2025-08-19 13:20:28,211 - __streamlit_app__ - INFO - Client Qdrant initialisé
+2025-08-19 13:20:28,212 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 14:38:05,473 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 14:38:05,494 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 14:38:05,505 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 14:38:27,143 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 14:38:27,152 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 14:38:27,155 - __streamlit_app__ - INFO - Traitement de l'URL YouTube: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:38:27,156 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:38:27,156 - __streamlit_app__ - INFO - Vérification de l'existence de la vidéo OLXkGB7krGo dans Qdrant...
+2025-08-19 14:38:28,780 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 404 Not Found"
+2025-08-19 14:38:28,792 - __qdrant__ - ERROR - Error checking existence of video OLXkGB7krGo: Unexpected Response: 404 (Not Found)
+Raw response content:
+b'{"status":{"error":"Not found: Collection `youtube_transcripts` doesn\'t exist!"},"time":4.767e-6}'
+2025-08-19 14:38:28,793 - __streamlit_app__ - INFO - Vidéo OLXkGB7krGo non trouvée, démarrage de l'ingestion...
+2025-08-19 14:38:28,794 - __streamlit_app__ - INFO - Récupération de la transcription pour OLXkGB7krGo
+2025-08-19 14:38:30,283 - __streamlit_app__ - INFO - Transcription récupérée (706 segments)
+2025-08-19 14:38:30,284 - __streamlit_app__ - INFO - Sauvegarde de la transcription pour OLXkGB7krGo
+2025-08-19 14:38:30,285 - __youtube__ - INFO - Saving TXT to OLXkGB7krGo.txt
+2025-08-19 14:38:30,286 - __youtube__ - INFO - Saved TXT to ../downloads/OLXkGB7krGo.txt
+2025-08-19 14:38:30,287 - __streamlit_app__ - INFO - Transcription sauvegardée dans ./downloads/OLXkGB7krGo.txt
+2025-08-19 14:38:30,288 - __streamlit_app__ - INFO - Traitement et stockage de OLXkGB7krGo dans Qdrant
+2025-08-19 14:38:30,288 - __embedding__ - INFO - Starting processing for TXT file: ./downloads/OLXkGB7krGo.txt
+2025-08-19 14:38:30,289 - __embedding__ - INFO - Loaded text from ./downloads/OLXkGB7krGo.txt, length: 22199 chars
+2025-08-19 14:38:30,289 - __embedding__ - INFO - Splitting text into chunks (size=700, overlap=100)
+2025-08-19 14:38:30,292 - __embedding__ - INFO - Text split into 37 chunks
+2025-08-19 14:38:30,293 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-19 14:38:30,296 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-19 14:38:30,296 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-19 14:38:38,917 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-19 14:38:38,923 - __embedding__ - INFO - Embedding 37 text chunks
+2025-08-19 14:38:41,340 - __embedding__ - INFO - Embedded 37 text chunks
+2025-08-19 14:38:41,796 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-19 14:38:42,177 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-19 14:38:42,179 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[]
+2025-08-19 14:38:42,306 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-19 14:38:42,306 - __qdrant__ - INFO - Creating collection 'youtube_transcripts' with vector size 768 and distance Cosine
+2025-08-19 14:38:42,616 - httpx - INFO - HTTP Request: PUT https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts "HTTP/1.1 200 OK"
+2025-08-19 14:38:42,625 - __qdrant__ - INFO - Creating index on payload field 'video_id'
+2025-08-19 14:38:42,844 - httpx - INFO - HTTP Request: PUT https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/index?wait=true "HTTP/1.1 200 OK"
+2025-08-19 14:38:42,851 - __qdrant__ - INFO - Creating index on payload field 'language'
+2025-08-19 14:38:43,087 - httpx - INFO - HTTP Request: PUT https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/index?wait=true "HTTP/1.1 200 OK"
+2025-08-19 14:38:43,088 - __qdrant__ - INFO - Upserting 37 points into collection 'youtube_transcripts'
+2025-08-19 14:38:43,879 - httpx - INFO - HTTP Request: PUT https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points?wait=true "HTTP/1.1 200 OK"
+2025-08-19 14:38:43,880 - __qdrant__ - INFO - Successfully upserted points into collection 'youtube_transcripts'
+2025-08-19 14:38:43,880 - __embedding__ - INFO - Finished processing and storing 37 chunks from ./downloads/OLXkGB7krGo.txt
+2025-08-19 14:38:44,345 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-19 14:38:44,350 - __streamlit_app__ - INFO - Vidéo OLXkGB7krGo confirmée dans Qdrant
+2025-08-19 14:38:44,353 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 14:39:08,376 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 14:39:08,387 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 14:39:08,395 - __streamlit_app__ - INFO - Traitement de l'URL YouTube: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:39:08,395 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:39:08,395 - __streamlit_app__ - INFO - Vérification de l'existence de la vidéo OLXkGB7krGo dans Qdrant...
+2025-08-19 14:39:08,824 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-19 14:39:08,829 - __streamlit_app__ - INFO - Vidéo OLXkGB7krGo déjà présente dans la base
+2025-08-19 14:39:08,831 - __streamlit_app__ - INFO - Question utilisateur: De quoi parle la vidéo ?
+2025-08-19 14:39:08,836 - __streamlit_app__ - INFO - Recherche de chunks pertinents pour: De quoi parle la vidéo ?
+2025-08-19 14:39:08,837 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'De quoi parle la vidéo ?'
+2025-08-19 14:39:08,837 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-19 14:39:08,853 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-19 14:39:08,854 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-19 14:39:13,867 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-19 14:39:14,497 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-19 14:39:14,868 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-19 14:39:14,872 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='youtube_transcripts')]
+2025-08-19 14:39:14,872 - __retrieve__ - INFO - Application du filtre pour la vidéo : OLXkGB7krGo
+2025-08-19 14:39:14,873 - __retrieve__ - INFO - Application du filtre pour la langue : en
+2025-08-19 14:39:14,873 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-19 14:39:15,127 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-19 14:39:15,141 - __retrieve__ - INFO - Retrieved 0 relevant chunks.
+2025-08-19 14:39:15,143 - __streamlit_app__ - INFO - Trouvé 0 chunks pertinents
+2025-08-19 14:39:15,147 - __streamlit_app__ - INFO - Aucun chunk pertinent trouvé pour la requête
+2025-08-19 14:39:15,965 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 14:41:01,986 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 14:41:01,999 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 14:41:02,007 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 14:41:04,355 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 14:41:04,357 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 14:41:04,361 - __streamlit_app__ - INFO - Traitement de l'URL YouTube: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:41:04,361 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:41:04,361 - __streamlit_app__ - INFO - Vérification de l'existence de la vidéo OLXkGB7krGo dans Qdrant...
+2025-08-19 14:41:04,770 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 404 Not Found"
+2025-08-19 14:41:04,775 - __qdrant__ - ERROR - Error checking existence of video OLXkGB7krGo: Unexpected Response: 404 (Not Found)
+Raw response content:
+b'{"status":{"error":"Not found: Collection `youtube_transcripts` doesn\'t exist!"},"time":4.058e-6}'
+2025-08-19 14:41:04,778 - __streamlit_app__ - INFO - Vidéo OLXkGB7krGo non trouvée, démarrage de l'ingestion...
+2025-08-19 14:41:04,780 - __streamlit_app__ - INFO - Récupération de la transcription pour OLXkGB7krGo
+2025-08-19 14:41:06,571 - __streamlit_app__ - INFO - Transcription récupérée (706 segments)
+2025-08-19 14:41:06,573 - __streamlit_app__ - INFO - Sauvegarde de la transcription pour OLXkGB7krGo
+2025-08-19 14:41:06,573 - __youtube__ - INFO - Saving TXT to OLXkGB7krGo.txt
+2025-08-19 14:41:06,577 - __youtube__ - INFO - Saved TXT to ../downloads/OLXkGB7krGo.txt
+2025-08-19 14:41:06,577 - __streamlit_app__ - INFO - Transcription sauvegardée dans ./downloads/OLXkGB7krGo.txt
+2025-08-19 14:41:06,578 - __streamlit_app__ - INFO - Traitement et stockage de OLXkGB7krGo dans Qdrant
+2025-08-19 14:41:06,579 - __embedding__ - INFO - Starting processing for TXT file: ./downloads/OLXkGB7krGo.txt
+2025-08-19 14:41:06,579 - __embedding__ - INFO - Loaded text from ./downloads/OLXkGB7krGo.txt, length: 22199 chars
+2025-08-19 14:41:06,580 - __embedding__ - INFO - Splitting text into chunks (size=700, overlap=100)
+2025-08-19 14:41:06,582 - __embedding__ - INFO - Text split into 37 chunks
+2025-08-19 14:41:06,582 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-19 14:41:06,588 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-19 14:41:06,588 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-19 14:41:12,822 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-19 14:41:12,823 - __embedding__ - INFO - Embedding 37 text chunks
+2025-08-19 14:41:14,965 - __embedding__ - INFO - Embedded 37 text chunks
+2025-08-19 14:41:15,423 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-19 14:41:15,805 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-19 14:41:15,806 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[]
+2025-08-19 14:41:16,085 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-19 14:41:16,086 - __qdrant__ - INFO - Creating collection 'youtube_transcripts' with vector size 768 and distance Cosine
+2025-08-19 14:41:16,413 - httpx - INFO - HTTP Request: PUT https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts "HTTP/1.1 200 OK"
+2025-08-19 14:41:16,414 - __qdrant__ - INFO - Creating index on payload field 'video_id'
+2025-08-19 14:41:16,639 - httpx - INFO - HTTP Request: PUT https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/index?wait=true "HTTP/1.1 200 OK"
+2025-08-19 14:41:16,640 - __qdrant__ - INFO - Creating index on payload field 'language'
+2025-08-19 14:41:16,935 - httpx - INFO - HTTP Request: PUT https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/index?wait=true "HTTP/1.1 200 OK"
+2025-08-19 14:41:16,971 - __qdrant__ - INFO - Upserting 37 points into collection 'youtube_transcripts'
+2025-08-19 14:41:17,759 - httpx - INFO - HTTP Request: PUT https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points?wait=true "HTTP/1.1 200 OK"
+2025-08-19 14:41:17,760 - __qdrant__ - INFO - Successfully upserted points into collection 'youtube_transcripts'
+2025-08-19 14:41:17,760 - __embedding__ - INFO - Finished processing and storing 37 chunks from ./downloads/OLXkGB7krGo.txt
+2025-08-19 14:41:18,169 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-19 14:41:18,170 - __streamlit_app__ - INFO - Vidéo OLXkGB7krGo confirmée dans Qdrant
+2025-08-19 14:41:18,178 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 14:41:58,147 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 14:41:58,157 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 14:41:58,162 - __streamlit_app__ - INFO - Traitement de l'URL YouTube: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:41:58,163 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:41:58,164 - __streamlit_app__ - INFO - Vérification de l'existence de la vidéo OLXkGB7krGo dans Qdrant...
+2025-08-19 14:41:58,717 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-19 14:41:58,725 - __streamlit_app__ - INFO - Vidéo OLXkGB7krGo déjà présente dans la base
+2025-08-19 14:41:58,728 - __streamlit_app__ - INFO - Question utilisateur: De quoi palrle la vidéo ?
+2025-08-19 14:41:58,730 - __streamlit_app__ - INFO - Recherche de chunks pertinents pour: De quoi palrle la vidéo ?
+2025-08-19 14:41:58,731 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'De quoi palrle la vidéo ?'
+2025-08-19 14:41:58,731 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-19 14:41:58,736 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-19 14:41:58,736 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-19 14:42:04,513 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-19 14:42:06,463 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-19 14:42:06,853 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-19 14:42:06,858 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='youtube_transcripts')]
+2025-08-19 14:42:06,859 - __retrieve__ - INFO - Application du filtre pour la vidéo : OLXkGB7krGo
+2025-08-19 14:42:06,859 - __retrieve__ - INFO - Application du filtre pour la langue : en
+2025-08-19 14:42:06,860 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-19 14:42:07,105 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-19 14:42:07,107 - __retrieve__ - INFO - Retrieved 0 relevant chunks.
+2025-08-19 14:42:07,109 - __streamlit_app__ - INFO - Trouvé 0 chunks pertinents
+2025-08-19 14:42:07,114 - __streamlit_app__ - INFO - Aucun chunk pertinent trouvé pour la requête
+2025-08-19 14:42:07,955 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 14:42:47,659 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 14:42:47,672 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 14:42:47,680 - __streamlit_app__ - INFO - Traitement de l'URL YouTube: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:42:47,682 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:42:47,683 - __streamlit_app__ - INFO - Vérification de l'existence de la vidéo OLXkGB7krGo dans Qdrant...
+2025-08-19 14:42:48,096 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-19 14:42:48,100 - __streamlit_app__ - INFO - Vidéo OLXkGB7krGo déjà présente dans la base
+2025-08-19 14:42:48,104 - __streamlit_app__ - INFO - Question utilisateur: Ah bon ?
+2025-08-19 14:42:48,107 - __streamlit_app__ - INFO - Recherche de chunks pertinents pour: Ah bon ?
+2025-08-19 14:42:48,107 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'Ah bon ?'
+2025-08-19 14:42:48,107 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-19 14:42:48,111 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-19 14:42:48,111 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-19 14:42:53,044 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-19 14:42:54,175 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-19 14:42:54,575 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-19 14:42:54,577 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='youtube_transcripts')]
+2025-08-19 14:42:54,577 - __retrieve__ - INFO - Application du filtre pour la vidéo : OLXkGB7krGo
+2025-08-19 14:42:54,577 - __retrieve__ - INFO - Application du filtre pour la langue : en
+2025-08-19 14:42:54,577 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-19 14:42:54,840 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-19 14:42:54,841 - __retrieve__ - INFO - Retrieved 0 relevant chunks.
+2025-08-19 14:42:54,842 - __streamlit_app__ - INFO - Trouvé 0 chunks pertinents
+2025-08-19 14:42:54,846 - __streamlit_app__ - INFO - Aucun chunk pertinent trouvé pour la requête
+2025-08-19 14:42:55,665 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 14:44:09,851 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 14:44:09,866 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 14:44:09,878 - __streamlit_app__ - INFO - Traitement de l'URL YouTube: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:44:09,878 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:44:09,879 - __streamlit_app__ - INFO - Vérification de l'existence de la vidéo OLXkGB7krGo dans Qdrant...
+2025-08-19 14:44:10,300 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-19 14:44:10,308 - __streamlit_app__ - INFO - Vidéo OLXkGB7krGo déjà présente dans la base
+2025-08-19 14:44:10,318 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 14:44:13,128 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 14:44:13,134 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 14:44:13,139 - __streamlit_app__ - INFO - Traitement de l'URL YouTube: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:44:13,139 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:44:13,140 - __streamlit_app__ - INFO - Vérification de l'existence de la vidéo OLXkGB7krGo dans Qdrant...
+2025-08-19 14:44:13,292 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-19 14:44:13,296 - __streamlit_app__ - INFO - Vidéo OLXkGB7krGo déjà présente dans la base
+2025-08-19 14:44:13,305 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 14:44:38,873 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 14:44:38,877 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 14:44:38,881 - __streamlit_app__ - INFO - Traitement de l'URL YouTube: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:44:38,882 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:44:38,882 - __streamlit_app__ - INFO - Vérification de l'existence de la vidéo OLXkGB7krGo dans Qdrant...
+2025-08-19 14:44:39,290 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-19 14:44:39,293 - __streamlit_app__ - INFO - Vidéo OLXkGB7krGo déjà présente dans la base
+2025-08-19 14:44:39,303 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 14:44:45,412 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 14:44:45,418 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 14:44:45,423 - __streamlit_app__ - INFO - Traitement de l'URL YouTube: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:44:45,424 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:44:45,424 - __streamlit_app__ - INFO - Vérification de l'existence de la vidéo OLXkGB7krGo dans Qdrant...
+2025-08-19 14:44:45,809 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-19 14:44:45,811 - __streamlit_app__ - INFO - Vidéo OLXkGB7krGo déjà présente dans la base
+2025-08-19 14:44:45,818 - __streamlit_app__ - INFO - Question utilisateur: ??
+2025-08-19 14:44:45,821 - __streamlit_app__ - INFO - Recherche de chunks pertinents pour: ??
+2025-08-19 14:44:45,821 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : '??'
+2025-08-19 14:44:45,822 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-19 14:44:45,834 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-19 14:44:45,835 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-19 14:44:51,103 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-19 14:44:52,470 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-19 14:44:52,841 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-19 14:44:52,843 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='youtube_transcripts')]
+2025-08-19 14:44:52,843 - __retrieve__ - INFO - Application du filtre pour la vidéo : OLXkGB7krGo
+2025-08-19 14:44:52,844 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-19 14:44:53,084 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-19 14:44:53,094 - __retrieve__ - INFO - Retrieved 10 relevant chunks.
+2025-08-19 14:44:53,095 - __streamlit_app__ - INFO - Trouvé 10 chunks pertinents
+2025-08-19 14:44:53,098 - __streamlit_app__ - INFO - Génération de réponse avec le modèle openai/gpt-oss-120b
+2025-08-19 14:44:53,098 - __query__ - INFO - Construction du prompt pour la question: 'Réponds en Français: ??'
+2025-08-19 14:44:53,099 - __query__ - INFO - Appel à Grok pour générer la réponse...
+2025-08-19 14:44:53,099 - __grok__ - INFO - Generating answer with Groq model 'openai/gpt-oss-120b'
+2025-08-19 14:44:53,116 - __grok__ - INFO - Groq client created
+2025-08-19 14:44:54,481 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-19 14:44:54,505 - __grok__ - INFO - Answer generated successfully.
+2025-08-19 14:44:54,505 - __query__ - INFO - Réponse générée avec succès.
+2025-08-19 14:44:57,248 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 14:45:00,113 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 14:45:00,115 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 14:45:00,124 - __streamlit_app__ - INFO - Traitement de l'URL YouTube: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:45:00,125 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:45:00,125 - __streamlit_app__ - INFO - Vérification de l'existence de la vidéo OLXkGB7krGo dans Qdrant...
+2025-08-19 14:45:00,512 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-19 14:45:00,514 - __streamlit_app__ - INFO - Vidéo OLXkGB7krGo déjà présente dans la base
+2025-08-19 14:45:00,522 - __streamlit_app__ - INFO - Réinitialisation de la conversation demandée
+2025-08-19 14:45:00,638 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 14:45:00,638 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 14:45:00,640 - __streamlit_app__ - INFO - Traitement de l'URL YouTube: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:45:00,640 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:45:00,640 - __streamlit_app__ - INFO - Vérification de l'existence de la vidéo OLXkGB7krGo dans Qdrant...
+2025-08-19 14:45:00,769 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-19 14:45:00,770 - __streamlit_app__ - INFO - Vidéo OLXkGB7krGo déjà présente dans la base
+2025-08-19 14:45:00,772 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 14:45:11,650 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 14:45:11,659 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 14:45:11,668 - __streamlit_app__ - INFO - Traitement de l'URL YouTube: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:45:11,669 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:45:11,669 - __streamlit_app__ - INFO - Vérification de l'existence de la vidéo OLXkGB7krGo dans Qdrant...
+2025-08-19 14:45:12,059 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-19 14:45:12,065 - __streamlit_app__ - INFO - Vidéo OLXkGB7krGo déjà présente dans la base
+2025-08-19 14:45:12,069 - __streamlit_app__ - INFO - Question utilisateur: Dis moi de qioi parle la vidéo 
+2025-08-19 14:45:12,072 - __streamlit_app__ - INFO - Recherche de chunks pertinents pour: Dis moi de qioi parle la vidéo 
+2025-08-19 14:45:12,073 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'Dis moi de qioi parle la vidéo '
+2025-08-19 14:45:12,073 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-19 14:45:12,077 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-19 14:45:12,078 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-19 14:45:17,411 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-19 14:45:18,466 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-19 14:45:18,847 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-19 14:45:18,851 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='youtube_transcripts')]
+2025-08-19 14:45:18,851 - __retrieve__ - INFO - Application du filtre pour la vidéo : OLXkGB7krGo
+2025-08-19 14:45:18,851 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-19 14:45:19,094 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-19 14:45:19,096 - __retrieve__ - INFO - Retrieved 10 relevant chunks.
+2025-08-19 14:45:19,098 - __streamlit_app__ - INFO - Trouvé 10 chunks pertinents
+2025-08-19 14:45:19,104 - __streamlit_app__ - INFO - Génération de réponse avec le modèle openai/gpt-oss-120b
+2025-08-19 14:45:19,104 - __query__ - INFO - Construction du prompt pour la question: 'Réponds en Français: Dis moi de qioi parle la vidéo '
+2025-08-19 14:45:19,105 - __query__ - INFO - Appel à Grok pour générer la réponse...
+2025-08-19 14:45:19,105 - __grok__ - INFO - Generating answer with Groq model 'openai/gpt-oss-120b'
+2025-08-19 14:45:19,122 - __grok__ - INFO - Groq client created
+2025-08-19 14:45:21,313 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-19 14:45:21,318 - __grok__ - INFO - Answer generated successfully.
+2025-08-19 14:45:21,318 - __query__ - INFO - Réponse générée avec succès.
+2025-08-19 14:45:41,628 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 14:45:56,576 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 14:45:56,585 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 14:45:56,589 - __streamlit_app__ - INFO - Traitement de l'URL YouTube: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:45:56,589 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:45:56,590 - __streamlit_app__ - INFO - Vérification de l'existence de la vidéo OLXkGB7krGo dans Qdrant...
+2025-08-19 14:45:57,007 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-19 14:45:57,017 - __streamlit_app__ - INFO - Vidéo OLXkGB7krGo déjà présente dans la base
+2025-08-19 14:45:57,023 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-19 14:46:30,175 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-19 14:46:30,182 - __streamlit_app__ - INFO - Tous les modèles et clients chargés avec succès
+2025-08-19 14:46:30,190 - __streamlit_app__ - INFO - Traitement de l'URL YouTube: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:46:30,190 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=OLXkGB7krGo
+2025-08-19 14:46:30,190 - __streamlit_app__ - INFO - Vérification de l'existence de la vidéo OLXkGB7krGo dans Qdrant...
+2025-08-19 14:46:30,591 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-19 14:46:30,594 - __streamlit_app__ - INFO - Vidéo OLXkGB7krGo déjà présente dans la base
+2025-08-19 14:46:30,600 - __streamlit_app__ - INFO - Question utilisateur: Bien. Que penses tu de l'architecture choisie par le présentateur ?
+2025-08-19 14:46:30,603 - __streamlit_app__ - INFO - Recherche de chunks pertinents pour: Bien. Que penses tu de l'architecture choisie par le présentateur ?
+2025-08-19 14:46:30,603 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'Bien. Que penses tu de l'architecture choisie par le présentateur ?'
+2025-08-19 14:46:30,604 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-19 14:46:30,610 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-19 14:46:30,610 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-19 14:46:35,658 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-19 14:46:36,420 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-19 14:46:36,795 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-19 14:46:36,799 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='youtube_transcripts')]
+2025-08-19 14:46:36,800 - __retrieve__ - INFO - Application du filtre pour la vidéo : OLXkGB7krGo
+2025-08-19 14:46:36,800 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-19 14:46:37,042 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-19 14:46:37,044 - __retrieve__ - INFO - Retrieved 10 relevant chunks.
+2025-08-19 14:46:37,046 - __streamlit_app__ - INFO - Trouvé 10 chunks pertinents
+2025-08-19 14:46:37,051 - __streamlit_app__ - INFO - Génération de réponse avec le modèle qwen/qwen3-32b
+2025-08-19 14:46:37,052 - __query__ - INFO - Construction du prompt pour la question: 'Réponds en Français: Bien. Que penses tu de l'architecture choisie par le présentateur ?'
+2025-08-19 14:46:37,052 - __query__ - INFO - Appel à Grok pour générer la réponse...
+2025-08-19 14:46:37,053 - __grok__ - INFO - Generating answer with Groq model 'qwen/qwen3-32b'
+2025-08-19 14:46:37,069 - __grok__ - INFO - Groq client created
+2025-08-19 14:46:41,798 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-19 14:46:41,804 - __grok__ - INFO - Answer generated successfully.
+2025-08-19 14:46:41,805 - __query__ - INFO - Réponse générée avec succès.
+2025-08-19 14:47:13,296 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit

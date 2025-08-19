@@ -1,6 +1,5 @@
 from urllib.parse import urlparse, parse_qs
 from .loggings import configure_logging
-from youtube_transcript_api import YouTubeTranscriptApi
 logger = configure_logging(log_file="youtube.log", logger_name="__youtube__")
 
 def extract_video_id(url: str) -> str:
@@ -35,105 +34,21 @@ def extract_video_id(url: str) -> str:
     parts = parsed.path.split('/')
     if 'embed' in parts:
         return parts[-1]
-    raise ValueError(f"Could not extract video ID from URL: {url}")
+    logger.error(f"Impossible d'extraire l'ID depuis: {url}")
 
-
-
-def get_available_transcript_languages(video_id: str) -> list:
+def save_txt(fetched_transcript, out_path='transcript.txt'):
     """
-    Récupère les langues de transcription disponibles pour une vidéo.
-    
-    Args:
-        video_id: L'ID de la vidéo YouTube
-        
-    Returns:
-        list: Liste des codes de langues disponibles
-    """
-    from youtube_transcript_api import YouTubeTranscriptApi
-    try:
-        # Essayer de récupérer une transcription avec les langues courantes
-        common_languages = ['en', 'fr', 'es', 'de', 'it', 'pt', 'ru', 'ja', 'ko', 'zh-Hans', 'zh-Hant']
-        available_languages = []
-        
-        for lang in common_languages:
-            try:
-                # Tester si la transcription existe pour cette langue
-                YouTubeTranscriptApi.get_transcript(video_id, languages=[lang])
-                available_languages.append({
-                    'language_code': lang,
-                    'language': get_language_name(lang),  # Fonction à implémenter
-                    'is_generated': False  # On ne sait pas vraiment, mais par défaut
-                })
-            except:
-                # Langue non disponible, continuer
-                continue
-                
-        # Si aucune langue trouvée, essayer avec les transcriptions auto-générées
-        if not available_languages:
-            try:
-                transcript = YouTubeTranscriptApi.get_transcript(video_id)
-                # Extraire la langue de la première entrée si possible
-                available_languages.append({
-                    'language_code': 'auto',
-                    'language': 'Auto-détecté',
-                    'is_generated': True
-                })
-            except:
-                pass
-                
-        return available_languages if available_languages else [{
-            'language_code': 'en',
-            'language': 'English',
-            'is_generated': True
-        }]
-        
-    except Exception as e:
-        logger.error(f"Erreur lors de la récupération des langues pour {video_id}: {e}")
-        return [{
-            'language_code': 'en',
-            'language': 'English',
-            'is_generated': True
-        }]
-
-def get_language_name(code: str) -> str:
-    """Retourne le nom de la langue à partir du code."""
-    language_names = {
-        'en': 'English',
-        'fr': 'Français',
-        'es': 'Español',
-        'de': 'Deutsch',
-        'it': 'Italiano',
-        'pt': 'Português',
-        'ru': 'Русский',
-        'ja': '日本語',
-        'ko': '한국어',
-        'zh-Hans': '中文(简体)',
-        'zh-Hant': '中文(繁體)'
-    }
-    return language_names.get(code, code)
-
-def save_txt_with_language(fetched_transcript, video_id: str, language_code: str, out_path=None):
-    """
-    Saves the fetched transcript to a text file with language information.
+    Saves the fetched transcript to a text file.
 
     Args:
         fetched_transcript: The fetched transcript.
-        video_id: The video ID.
-        language_code: The language code.
         out_path: The path to the output text file.
 
     Returns:
         None
     """
-    if out_path is None:
-        out_path = f"{video_id}_{language_code}.txt"
-    
     logger.info(f"Saving TXT to {out_path}")
     with open("./downloads/"+out_path, 'w', encoding='utf-8') as f:
-        f.write(f"Language: {language_code}\n")
-        f.write(f"Video ID: {video_id}\n")
-        f.write("="*50 + "\n\n")
-        
         for seg in fetched_transcript:
             f.write(seg.text.strip() + '\n')
     logger.info(f"Saved TXT to ../downloads/{out_path}")
