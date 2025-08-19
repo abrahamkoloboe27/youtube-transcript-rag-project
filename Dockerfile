@@ -1,49 +1,36 @@
-# Dockerfile
-# Étape 1 : Image de construction avec le code source
-FROM python:3.12-slim AS builder
+# Use a Python image with uv pre-installed
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 
-# Installer uv
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+# Install the project into `/app`
+WORKDIR /app
 
-# Créer un utilisateur non-root pour la construction
-RUN useradd --create-home --shell /bin/bash app
-USER app
-WORKDIR /home/app
+# Enable bytecode compilation
+ENV UV_COMPILE_BYTECODE=1
 
-# Copier les fichiers de spécification ET le code source
-# Assure-toi que ton .dockerignore est configuré pour exclure les fichiers inutiles
-COPY --chown=app:app . .
+# Copy from the cache instead of linking since it's a mounted volume
+ENV UV_LINK_MODE=copy
 
-# Créer un environnement virtuel et synchroniser le projet
-# Utiliser le cache de uv pour accélérer les builds
-RUN --mount=type=cache,target=/home/app/.cache/uv \
-    uv venv && \
-    uv sync --locked
+# Ensure installed tools can be executed out of the box
+ENV UV_TOOL_BIN_DIR=/usr/local/bin
 
-# Étape 2 : Image de production
-FROM python:3.12-slim
+# Install the project's dependencies using the lockfile and settings
+RUN --mount=type=cache,target=/root/.cache/uv \
+    --mount=type=bind,source=uv.lock,target=uv.lock \
+    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+    uv sync --locked --no-install-project --no-dev
 
+# Then, add the rest of the project source code and install it
+# Installing separately from its dependencies allows optimal layer caching
+COPY . /app
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync --locked --no-dev
 
+# Place executables in the environment at the front of the path
+ENV PATH="/app/.venv/bin:$PATH"
 
-# Créer l'utilisateur non-root
-RUN useradd --create-home --shell /bin/bash app
-USER app
+# Reset the entrypoint, don't invoke `uv`
+ENTRYPOINT []
 
-# Définir le répertoire de travail
-WORKDIR /home/app
-
-# Copier l'environnement virtuel de l'étape de construction
-COPY --from=builder --chown=app:app /home/app/.venv /home/app/.venv
-
-# Copier le code source de l'application
-COPY --from=builder --chown=app:app /home/app /home/app
-
-# S'assurer que l'environnement virtuel est activé
-ENV PATH="/home/app/.venv/bin:$PATH"
-ENV VIRTUAL_ENV="/home/app/.venv"
-
-# Exposer le port utilisé par Streamlit
 EXPOSE 8501
 
-# Définir la commande par défaut
-CMD ["streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "streamlit_app.py"]
