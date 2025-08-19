@@ -105,17 +105,17 @@ with st.sidebar:
     # Sélecteur de modèle d'embedding
     # Note: Changer le modèle d'embedding nécessitera un rechargement de l'application
     # car le modèle est chargé au démarrage.
-    st.markdown("---")
-    st.subheader("🧠 Embedding Settings")
+    # st.markdown("---")
+    # st.subheader("🧠 Embedding Settings")
     # Pour simplifier, on affiche le modèle actuel mais on ne permet pas le changement
     # à la volée car cela nécessiterait de recharger le modèle.
-    st.selectbox(
-        "🔤 Embedding Model",
-        options=list(EMBEDDING_MODELS.values()),
-        index=list(EMBEDDING_MODELS.keys()).index(st.session_state.selected_embedding_model) if st.session_state.selected_embedding_model in EMBEDDING_MODELS.keys() else 0,
-        disabled=True, # Désactivé car le changement à la volée n'est pas implémenté
-        help="Model used for text embedding. Requires restart to change."
-    )
+    # st.selectbox(
+    #     "🔤 Embedding Model",
+    #     options=list(EMBEDDING_MODELS.values()),
+    #     index=list(EMBEDDING_MODELS.keys()).index(st.session_state.selected_embedding_model) if st.session_state.selected_embedding_model in EMBEDDING_MODELS.keys() else 0,
+    #     disabled=True, # Désactivé car le changement à la volée n'est pas implémenté
+    #     help="Model used for text embedding. Requires restart to change."
+    # )
     # Si tu veux permettre le changement, il faudra implémenter un mécanisme
     # pour recharger le modèle d'embedding dans src/embedding.py.
     
@@ -266,7 +266,6 @@ if prompt := st.chat_input("Ask a question about the video...",
                         query=prompt,
                         collection_name=COLLECTION_NAME,
                         video_id=st.session_state.current_video_id,
-                        # language_code is intentionally omitted to avoid filtering issues
                         top_k=10
                     )
                     logger.info(f"Found {len(retrieved_chunks)} relevant chunks")
@@ -314,14 +313,9 @@ if prompt := st.chat_input("Ask a question about the video...",
     st.session_state.messages.append({"role": "assistant", "content": full_response})
     logger.debug("Response added to history")
 
-# Bouton pour réinitialiser la conversation
 if st.sidebar.button("🗑️ Reset Conversation"):
     logger.info("Conversation reset requested")
-    # Réinitialiser uniquement les messages et l'état de la conversation
     st.session_state.messages = []
-    # Conserver video_id et video_processed pour ne pas ré-ingérer la vidéo
-    # st.session_state.current_video_id = None
-    # st.session_state.video_processed = False
     st.rerun()
 
 logger.info("End of Streamlit application render")
