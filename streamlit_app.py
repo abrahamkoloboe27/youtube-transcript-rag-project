@@ -91,8 +91,9 @@ with st.sidebar:
     # Sélecteur de langue pour la réponse
     st.session_state.response_language = st.selectbox(
         "🌍 Response Language",
-        options=["English", "Français", "Español", "Deutsch"],
-        index=0
+        options=["English", "Français", "Español", "Deutsch","Hindi","Telugu"],
+        index=0,
+        help="Select the language for the response"
     )
 
     # Sélecteur de modèle de réponse (LLM)
@@ -172,7 +173,7 @@ with st.sidebar:
                     with st.spinner("📥 Fetching transcript..."):
                         logger.info(f"Fetching transcript for {video_id}")
                         # Essayer plusieurs langues courantes
-                        transcript_languages = ['en', 'fr', 'es', 'de']
+                        transcript_languages = ['en', 'fr', 'es', 'de','hi','te']
                         transcript = None
                         for lang in transcript_languages:
                             try:

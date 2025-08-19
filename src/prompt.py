@@ -1,4 +1,3 @@
-# src/prompt.py
 
 # Prompt principal pour le RAG
 RAG_PROMPT_TEMPLATE = """Tu es un assistant expert spécialisé dans l'analyse de contenu vidéo YouTube. Ta tâche est de répondre de manière précise, structurée et utile aux questions en te basant uniquement sur le contexte fourni.
