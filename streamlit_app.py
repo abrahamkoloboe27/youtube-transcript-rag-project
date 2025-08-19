@@ -170,19 +170,47 @@ with st.sidebar:
                 
                 # Processus d'ingestion
                 try:
+                    # Dans la section d'ingestion, remplace la partie de récupération de la transcription par :
+
                     with st.spinner("📥 Fetching transcript..."):
                         logger.info(f"Fetching transcript for {video_id}")
-                        # Essayer plusieurs langues courantes
-                        transcript_languages = ['en', 'fr', 'es', 'de','hi','te']
-                        transcript = None
-                        for lang in transcript_languages:
-                            try:
-                                transcript = ytt.fetch(video_id=video_id, languages=[lang])
-                                logger.info(f"Transcript fetched in language '{lang}'")
-                                break
-                            except:
-                                continue
-                        
+                        try:
+                            # Essayer plusieurs langues courantes
+                            transcript_languages = ['en', 'fr', 'es', 'de']
+                            transcript = None
+                            for lang in transcript_languages:
+                                try:
+                                    transcript = ytt.fetch(video_id=video_id, languages=[lang])
+                                    logger.info(f"Transcript fetched in language '{lang}'")
+                                    break
+                                except:
+                                    continue
+                            
+                            if not transcript:
+                                # Essayer sans spécifier de langue (auto-détection)
+                                transcript = ytt.fetch(video_id=video_id)
+                                logger.info(f"Transcript fetched with auto-detected language")
+                            
+                            logger.info(f"Transcript retrieved ({len(transcript)} segments)")
+                        except Exception as e:
+                            error_msg = str(e)
+                            if "YouTube is blocking requests from your IP" in error_msg or "IP has been blocked" in error_msg:
+                                st.error("""
+                                    ⚠️ **YouTube is blocking access from cloud servers**
+                                    
+                                    This is a known limitation when using YouTube transcripts from cloud platforms like Streamlit.
+                                    
+                                    **Possible solutions:**
+                                    1. Try with a different video that has manually added subtitles
+                                    2. Use a local instance of the app (run Streamlit on your own computer)
+                                    3. Consider alternative sources for your RAG system
+                                    
+                                    *Note: This is not an issue with the app itself but with YouTube's restrictions on cloud servers.*
+                                """)
+                                logger.error(f"YouTube IP blocking detected for video {video_id}: {error_msg}")
+                                st.stop()  # Arrêter le processus ici
+                            else:
+                                raise  # Relancer l'exception si ce n'est pas le problème de blocage IP
                         if not transcript:
                             # Essayer sans spécifier de langue (auto-détection)
                             transcript = ytt.fetch(video_id=video_id)
