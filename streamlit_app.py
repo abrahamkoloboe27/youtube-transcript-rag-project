@@ -37,7 +37,11 @@ COLLECTION_NAME = "youtube_transcripts"
 AVAILABLE_MODELS = [
     "openai/gpt-oss-120b",
     "openai/gpt-oss-20b", 
-    "qwen/qwen3-32b"
+    "qwen/qwen3-32b",
+    "llama3-8b-8192",
+    "llama3-70b-8192",
+    "deepseek-r1-distill-llama-70b",
+    "gemma2-9b-it",
 ]
 DEFAULT_MODEL = "openai/gpt-oss-120b"
 
