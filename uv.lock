@@ -557,6 +557,15 @@ wheels = [
 ]
 
 [[package]]
+name = "log4mongo"
+version = "1.8.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/9a/20/8a3ea27dd3e5a2683744309fc976d11d5fabed23b708db7754d5233101de/log4mongo-1.8.1.tar.gz", hash = "sha256:235562b27b42fe5d560ce5ace0d09dddb2fbea34b8df214d725b4724b9620b0d", size = 15977, upload-time = "2024-07-21T18:17:10.172Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3d/eb/3376961aa2e7adcadc8c34d1dc13127bde0ddef3c8d065079a2e1cd71a10/log4mongo-1.8.1-py3-none-any.whl", hash = "sha256:10e5dc019771b0b4b4c731783014d5ae67bedc946189825a27c88131fda8e9ef", size = 7528, upload-time = "2024-07-21T18:17:08.491Z" },
+]
+
+[[package]]
 name = "logging"
 version = "0.4.9.6"
 source = { registry = "https://pypi.org/simple" }
@@ -617,6 +626,7 @@ dependencies = [
     { name = "groq" },
     { name = "langchain" },
     { name = "langchain-huggingface" },
+    { name = "log4mongo" },
     { name = "logging" },
     { name = "pymongo" },
     { name = "python-dotenv" },
@@ -631,6 +641,7 @@ requires-dist = [
     { name = "groq", specifier = ">=0.31.0" },
     { name = "langchain", specifier = ">=0.3.27" },
     { name = "langchain-huggingface", specifier = ">=0.3.1" },
+    { name = "log4mongo", specifier = ">=1.8.1" },
     { name = "logging", specifier = ">=0.4.9.6" },
     { name = "pymongo", specifier = ">=4.14.1" },
     { name = "python-dotenv", specifier = ">=1.1.1" },

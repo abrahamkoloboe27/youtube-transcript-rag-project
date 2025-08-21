@@ -26,7 +26,7 @@ class ConversationManager:
         try:
             if not self.mongo_uri or not self.db_name:
                 raise ValueError("MONGO_DB_URI_RAG et MONGO_DB_NAME_RAG doivent être définis")
-            logger.info(f"Connexion à MongoDB: {self.mongo_uri}")
+            logger.info(f"Connexion à MongoDB")
             self.client = MongoClient(
                 self.mongo_uri,
                 serverSelectionTimeoutMS=5000
