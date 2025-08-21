@@ -12,3 +12,6 @@ wheels/
 downloads/*
 *.log
 logs/*
+logs/*.log
+logs/main.log
+logs/youtube.log

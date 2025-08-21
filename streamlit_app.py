@@ -3,8 +3,9 @@
 import streamlit as st
 from src.youtube import extract_video_id, save_txt
 from src.embedding import process_and_store_transcript_txt, get_embedding_model
+from src.mongo_utils import ConversationManager
 from src.qdrant import get_qdrant_client, check_video_exists
-from src.retrieve import retrieve_relevant_chunks
+from src.retrieve import retrieve_relevant_chunks 
 from src.query import answer_question_with_grok
 from youtube_transcript_api import YouTubeTranscriptApi
 from src.loggings import configure_logging
@@ -22,8 +23,18 @@ st.set_page_config(
     layout="wide"
 )
 
+# === INITIALISATION DE LA SESSION MONGO DB ===
+if 'session_id' not in st.session_state:
+    st.session_state.session_id = None
+if 'conversation_manager' not in st.session_state:
+    try:
+        st.session_state.conversation_manager = ConversationManager()
+        logger.info("ConversationManager initialisé")
+    except Exception as e:
+        logger.error(f"Impossible d'initialiser ConversationManager: {e}")
+        st.session_state.conversation_manager = None
+
 # === CACHING DES MODELES ===
-# Note: Le caching du modèle d'embedding est géré dans src/embedding.py maintenant
 @st.cache_resource
 def get_qdrant_client_cached():
     """Cache le client Qdrant"""
@@ -47,19 +58,17 @@ DEFAULT_MODEL = "openai/gpt-oss-120b"
 
 # Modèles d'embedding disponibles
 EMBEDDING_MODELS = {
-    "sentence-transformers/all-mpnet-base-v2": "Default (all-mpnet-base-v2)",
-    "Qwen3-Embedding-0.6B": "Qwen3-Embedding-0.6B",
-    "bilingual-embedding-large": "bilingual-embedding-large"
+    "sentence-transformers/all-mpnet-base-v2": "Default (MPNet)",
+    "Qwen3-Embedding-0.6B": "Qwen3 0.6B",
+    "bilingual-embedding-large": "Bilingual Large"
 }
 DEFAULT_EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
 
 DEFAULT_TEMPERATURE = 0.7
 DEFAULT_MAX_TOKENS = 1000
-DEFAULT_LANGUAGE = "en"
 DEFAULT_RESPONSE_LANGUAGE = "English"
 
-# === INITIALISATION ===
-# Initialisation des variables de session
+# === INITIALISATION DES VARIABLES DE SESSION ===
 session_keys_defaults = {
     'messages': [],
     'current_video_id': None,
@@ -95,7 +104,7 @@ with st.sidebar:
     # Sélecteur de langue pour la réponse
     st.session_state.response_language = st.selectbox(
         "🌍 Response Language",
-        options=["English", "Français", "Español", "Deutsch","Hindi","Telugu"],
+        options=["English", "Français", "Español", "Deutsch", "Hindi", "Telugu"],
         index=0,
         help="Select the language for the response"
     )
@@ -106,23 +115,6 @@ with st.sidebar:
         options=AVAILABLE_MODELS,
         index=AVAILABLE_MODELS.index(DEFAULT_MODEL) if DEFAULT_MODEL in AVAILABLE_MODELS else 0
     )
-    
-    # Sélecteur de modèle d'embedding
-    # Note: Changer le modèle d'embedding nécessitera un rechargement de l'application
-    # car le modèle est chargé au démarrage.
-    # st.markdown("---")
-    # st.subheader("🧠 Embedding Settings")
-    # Pour simplifier, on affiche le modèle actuel mais on ne permet pas le changement
-    # à la volée car cela nécessiterait de recharger le modèle.
-    # st.selectbox(
-    #     "🔤 Embedding Model",
-    #     options=list(EMBEDDING_MODELS.values()),
-    #     index=list(EMBEDDING_MODELS.keys()).index(st.session_state.selected_embedding_model) if st.session_state.selected_embedding_model in EMBEDDING_MODELS.keys() else 0,
-    #     disabled=True, # Désactivé car le changement à la volée n'est pas implémenté
-    #     help="Model used for text embedding. Requires restart to change."
-    # )
-    # Si tu veux permettre le changement, il faudra implémenter un mécanisme
-    # pour recharger le modèle d'embedding dans src/embedding.py.
     
     st.markdown("---")
     
@@ -174,8 +166,6 @@ with st.sidebar:
                 
                 # Processus d'ingestion
                 try:
-                    # Dans la section d'ingestion, remplace la partie de récupération de la transcription par :
-
                     with st.spinner("📥 Fetching transcript..."):
                         logger.info(f"Fetching transcript for {video_id}")
                         try:
@@ -212,15 +202,9 @@ with st.sidebar:
                                     *Note: This is not an issue with the app itself but with YouTube's restrictions on cloud servers.*
                                 """)
                                 logger.error(f"YouTube IP blocking detected for video {video_id}: {error_msg}")
-                                st.stop()  # Arrêter le processus ici
+                                st.stop()
                             else:
-                                raise  # Relancer l'exception si ce n'est pas le problème de blocage IP
-                        if not transcript:
-                            # Essayer sans spécifier de langue (auto-détection)
-                            transcript = ytt.fetch(video_id=video_id)
-                            logger.info(f"Transcript fetched with auto-detected language")
-                        
-                        logger.info(f"Transcript retrieved ({len(transcript)} segments)")
+                                raise
                     
                     with st.spinner("💾 Saving transcript..."):
                         logger.info(f"Saving transcript for {video_id}")
@@ -236,11 +220,12 @@ with st.sidebar:
                             raise
                     
                     with st.spinner("🧠 Processing and storing in Qdrant..."):
-                        logger.info(f"Processing and storing {video_id} in Qdrant")
+                        logger.info(f"Processing and storing {video_id} in Qdrant using model {st.session_state.selected_embedding_model}")
                         process_and_store_transcript_txt(
                             txt_file_path=txt_file_path,
                             collection_name=COLLECTION_NAME,
                             video_id=video_id,
+                            embedding_model_name=st.session_state.selected_embedding_model,
                             chunk_size=700,
                             chunk_overlap=100
                         )
@@ -276,6 +261,12 @@ for message in st.session_state.messages:
 if prompt := st.chat_input("Ask a question about the video...", 
                           disabled=not st.session_state.video_processed):
     
+    # Générer un ID de session si ce n'est pas déjà fait
+    if not st.session_state.session_id:
+        if st.session_state.conversation_manager:
+            st.session_state.session_id = st.session_state.conversation_manager.generate_session_id()
+            logger.info(f"Nouvelle session créée: {st.session_state.session_id}")
+    
     logger.info(f"User question: {prompt}")
     # Ajouter le message utilisateur
     st.session_state.messages.append({"role": "user", "content": prompt})
@@ -292,13 +283,14 @@ if prompt := st.chat_input("Ask a question about the video...",
                 full_response = "❌ No video selected. Please enter a YouTube URL in the sidebar."
                 logger.warning("Question attempt without selected video")
             else:
-                # Récupérer les chunks pertinents (SANS filtre langue)
+                # Récupérer les chunks pertinents
                 with st.spinner("🔍 Searching for relevant information..."):
                     logger.info(f"Searching for relevant chunks for: {prompt}")
                     retrieved_chunks = retrieve_relevant_chunks(
                         query=prompt,
                         collection_name=COLLECTION_NAME,
                         video_id=st.session_state.current_video_id,
+                        embedding_model_name=st.session_state.selected_embedding_model,
                         top_k=10
                     )
                     logger.info(f"Found {len(retrieved_chunks)} relevant chunks")
@@ -314,7 +306,7 @@ if prompt := st.chat_input("Ask a question about the video...",
                         # Ajouter une instruction sur la langue de réponse dans le prompt
                         language_instruction = ""
                         if st.session_state.response_language and st.session_state.response_language != "English":
-                             language_instruction = f"Please answer in {st.session_state.response_language}. "
+                            language_instruction = f"Please answer in {st.session_state.response_language}. "
                         
                         contextualized_prompt = f"{language_instruction}{prompt}"
                         
@@ -331,7 +323,6 @@ if prompt := st.chat_input("Ask a question about the video...",
             # Afficher la réponse progressivement (effet de frappe)
             for chunk in full_response.split():
                 full_response += chunk + " "
-                # Utiliser une durée fixe plus rapide pour un meilleur UX
                 time.sleep(0.02) 
                 message_placeholder.markdown(full_response + "▌")
             message_placeholder.markdown(full_response)
@@ -345,10 +336,60 @@ if prompt := st.chat_input("Ask a question about the video...",
     # Ajouter la réponse à l'historique
     st.session_state.messages.append({"role": "assistant", "content": full_response})
     logger.debug("Response added to history")
+    
+    # Sauvegarder la conversation dans MongoDB
+    if st.session_state.conversation_manager:
+        try:
+            if st.session_state.session_id:
+                # Mettre à jour une conversation existante
+                new_messages = [
+                    {"role": "user", "content": prompt},
+                    {"role": "assistant", "content": full_response}
+                ]
+                st.session_state.conversation_manager.update_conversation(
+                    st.session_state.session_id, 
+                    new_messages
+                )
+            else:
+                # Créer une nouvelle conversation (cas où session_id n'existe pas encore)
+                # Normalement, il devrait déjà être créé, mais on le fait au cas où
+                st.session_state.session_id = st.session_state.conversation_manager.generate_session_id()
+                logger.info(f"Création d'une nouvelle conversation (au cas où): {st.session_state.session_id}")
+                
+        except Exception as e:
+            logger.error(f"Erreur lors de la sauvegarde de la conversation: {e}")
 
+
+# Bouton pour réinitialiser la conversation
 if st.sidebar.button("🗑️ Reset Conversation"):
     logger.info("Conversation reset requested")
+    
+    # Sauvegarder la conversation actuelle AVANT de réinitialiser
+    if (st.session_state.conversation_manager and 
+        st.session_state.session_id and 
+        len(st.session_state.messages) > 0):
+        try:
+            # Créer une nouvelle conversation complète
+            session_id = st.session_state.conversation_manager.save_conversation(
+                video_id=st.session_state.current_video_id or "unknown",
+                messages=st.session_state.messages,
+                metadata={
+                    "response_language": st.session_state.response_language,
+                    "model_used": selected_model, # Le modèle sélectionné
+                    "temperature": st.session_state.temperature,
+                    "max_tokens": st.session_state.max_tokens
+                }
+            )
+            logger.info(f"Conversation terminée sauvegardée avec ID: {session_id}")
+        except Exception as e:
+            logger.error(f"Erreur lors de la sauvegarde finale de la conversation: {e}")
+    
+    # Réinitialiser uniquement les messages et générer un nouvel ID de session
     st.session_state.messages = []
+    if st.session_state.conversation_manager:
+        st.session_state.session_id = st.session_state.conversation_manager.generate_session_id()
+        logger.info(f"Nouvelle session créée après réinitialisation: {st.session_state.session_id}")
+    
     st.rerun()
 
 logger.info("End of Streamlit application render")

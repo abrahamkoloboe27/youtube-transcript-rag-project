@@ -895,3 +895,1008 @@ b'{"status":{"error":"Not found: Collection `youtube_transcripts` doesn\'t exist
 2025-08-19 14:46:41,804 - __grok__ - INFO - Answer generated successfully.
 2025-08-19 14:46:41,805 - __query__ - INFO - Réponse générée avec succès.
 2025-08-19 14:47:13,296 - __streamlit_app__ - INFO - Fin du rendu de l'application Streamlit
+2025-08-21 11:31:37,775 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:31:37,879 - __mongo__ - INFO - Connexion à MongoDB: mongodb+srv://reporting:ChNNKat9xpZpPOYg@cluster0.z4sob.mongodb.net/
+2025-08-21 11:31:41,128 - __mongo__ - INFO - Connexion MongoDB établie avec succès
+2025-08-21 11:31:41,273 - __streamlit_app__ - INFO - ConversationManager initialisé
+2025-08-21 11:31:41,447 - __streamlit_app__ - INFO - Initialisation du client Qdrant...
+2025-08-21 11:31:43,728 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 11:31:44,127 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:31:44,131 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 11:31:44,132 - __streamlit_app__ - INFO - Client Qdrant initialisé
+2025-08-21 11:31:44,147 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:31:44,153 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:31:51,033 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:31:51,039 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:31:51,049 - __streamlit_app__ - INFO - Processing YouTube URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:31:51,050 - __youtube__ - INFO - Extracting video ID from URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:31:51,050 - __streamlit_app__ - INFO - Checking existence of video s3F1a1yUQoI in Qdrant...
+2025-08-21 11:31:51,479 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:31:51,488 - __streamlit_app__ - INFO - Video s3F1a1yUQoI already exists in the database
+2025-08-21 11:31:51,490 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:31:52,414 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:31:52,428 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:31:52,450 - __streamlit_app__ - INFO - Processing YouTube URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:31:52,451 - __youtube__ - INFO - Extracting video ID from URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:31:52,453 - __streamlit_app__ - INFO - Checking existence of video s3F1a1yUQoI in Qdrant...
+2025-08-21 11:31:52,585 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:31:52,588 - __streamlit_app__ - INFO - Video s3F1a1yUQoI already exists in the database
+2025-08-21 11:31:52,598 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:32:22,028 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:32:22,037 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:32:22,047 - __streamlit_app__ - INFO - Processing YouTube URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:32:22,047 - __youtube__ - INFO - Extracting video ID from URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:32:22,048 - __streamlit_app__ - INFO - Checking existence of video s3F1a1yUQoI in Qdrant...
+2025-08-21 11:32:22,469 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:32:22,471 - __streamlit_app__ - INFO - Video s3F1a1yUQoI already exists in the database
+2025-08-21 11:32:22,472 - __streamlit_app__ - INFO - Nouvelle session créée: 66645868-e1f1-48cb-999f-20aa3898e2d4
+2025-08-21 11:32:22,473 - __streamlit_app__ - INFO - User question: De quoi parle la vidéo ?
+2025-08-21 11:32:22,474 - __streamlit_app__ - INFO - Searching for relevant chunks for: De quoi parle la vidéo ?
+2025-08-21 11:32:22,476 - __streamlit_app__ - ERROR - Error generating response: retrieve_relevant_chunks() got an unexpected keyword argument 'embedding_model_name'
+2025-08-21 11:32:22,476 - __mongo__ - INFO - Mise à jour de la conversation 66645868-e1f1-48cb-999f-20aa3898e2d4 avec 2 nouveaux messages
+2025-08-21 11:32:22,593 - __mongo__ - INFO - Conversation 66645868-e1f1-48cb-999f-20aa3898e2d4 mise à jour avec succès
+2025-08-21 11:32:22,594 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:32:40,946 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:32:40,968 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:32:40,975 - __streamlit_app__ - INFO - Processing YouTube URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:32:40,975 - __youtube__ - INFO - Extracting video ID from URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:32:40,976 - __streamlit_app__ - INFO - Checking existence of video s3F1a1yUQoI in Qdrant...
+2025-08-21 11:32:41,456 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:32:41,462 - __streamlit_app__ - INFO - Video s3F1a1yUQoI already exists in the database
+2025-08-21 11:32:41,465 - __streamlit_app__ - INFO - User question: Quoi ?
+2025-08-21 11:32:41,467 - __streamlit_app__ - INFO - Searching for relevant chunks for: Quoi ?
+2025-08-21 11:32:41,469 - __streamlit_app__ - ERROR - Error generating response: retrieve_relevant_chunks() got an unexpected keyword argument 'embedding_model_name'
+2025-08-21 11:32:41,469 - __mongo__ - INFO - Mise à jour de la conversation 66645868-e1f1-48cb-999f-20aa3898e2d4 avec 2 nouveaux messages
+2025-08-21 11:32:41,581 - __mongo__ - INFO - Conversation 66645868-e1f1-48cb-999f-20aa3898e2d4 mise à jour avec succès
+2025-08-21 11:32:41,582 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:36:26,723 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:36:26,747 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:36:26,765 - __streamlit_app__ - INFO - Processing YouTube URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:36:26,765 - __youtube__ - INFO - Extracting video ID from URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:36:26,767 - __streamlit_app__ - INFO - Checking existence of video s3F1a1yUQoI in Qdrant...
+2025-08-21 11:36:27,226 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:36:27,234 - __streamlit_app__ - INFO - Video s3F1a1yUQoI already exists in the database
+2025-08-21 11:36:27,247 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:36:34,460 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:36:34,471 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:36:34,482 - __streamlit_app__ - INFO - Processing YouTube URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:36:34,483 - __youtube__ - INFO - Extracting video ID from URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:36:34,483 - __streamlit_app__ - INFO - Checking existence of video s3F1a1yUQoI in Qdrant...
+2025-08-21 11:36:34,908 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:36:34,913 - __streamlit_app__ - INFO - Video s3F1a1yUQoI already exists in the database
+2025-08-21 11:36:34,926 - __streamlit_app__ - INFO - User question: De quoi parle la vidéo ?
+2025-08-21 11:36:34,929 - __streamlit_app__ - INFO - Searching for relevant chunks for: De quoi parle la vidéo ?
+2025-08-21 11:36:34,929 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'De quoi parle la vidéo ?'
+2025-08-21 11:36:34,930 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:36:53,026 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 11:36:53,027 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:36:59,732 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 11:37:01,780 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 11:37:02,166 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:37:02,172 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 11:37:02,172 - __retrieve__ - INFO - Application du filtre pour la vidéo : s3F1a1yUQoI
+2025-08-21 11:37:02,174 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:37:02,174 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 11:37:02,418 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 400 Bad Request"
+2025-08-21 11:37:02,430 - __streamlit_app__ - ERROR - Error generating response: Unexpected Response: 400 (Bad Request)
+Raw response content:
+b'{"status":{"error":"Bad request: Index required but not found for \\"embedding_model\\" of one of the following types: [keyword]. Help: Create an index for this key or use a different filter."},"time ...'
+2025-08-21 11:37:02,434 - __mongo__ - INFO - Mise à jour de la conversation 66645868-e1f1-48cb-999f-20aa3898e2d4 avec 2 nouveaux messages
+2025-08-21 11:37:02,550 - __mongo__ - INFO - Conversation 66645868-e1f1-48cb-999f-20aa3898e2d4 mise à jour avec succès
+2025-08-21 11:37:02,557 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:37:46,982 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:37:47,000 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:37:47,019 - __streamlit_app__ - INFO - Processing YouTube URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:37:47,020 - __youtube__ - INFO - Extracting video ID from URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:37:47,020 - __streamlit_app__ - INFO - Checking existence of video s3F1a1yUQoI in Qdrant...
+2025-08-21 11:37:47,479 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:37:47,485 - __streamlit_app__ - INFO - Video s3F1a1yUQoI already exists in the database
+2025-08-21 11:37:47,496 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:37:51,380 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:37:51,381 - __mongo__ - INFO - Connexion à MongoDB: mongodb+srv://reporting:ChNNKat9xpZpPOYg@cluster0.z4sob.mongodb.net/
+2025-08-21 11:37:53,769 - __mongo__ - INFO - Connexion MongoDB établie avec succès
+2025-08-21 11:37:53,894 - __streamlit_app__ - INFO - ConversationManager initialisé
+2025-08-21 11:37:53,900 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:37:53,913 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:38:00,474 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:38:00,484 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:38:00,492 - __streamlit_app__ - INFO - Processing YouTube URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:38:00,493 - __youtube__ - INFO - Extracting video ID from URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:38:00,493 - __streamlit_app__ - INFO - Checking existence of video s3F1a1yUQoI in Qdrant...
+2025-08-21 11:38:00,912 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:38:00,916 - __streamlit_app__ - INFO - Video s3F1a1yUQoI already exists in the database
+2025-08-21 11:38:00,917 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:38:05,241 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:38:05,249 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:38:05,261 - __streamlit_app__ - INFO - Processing YouTube URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:38:05,261 - __youtube__ - INFO - Extracting video ID from URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:38:05,262 - __streamlit_app__ - INFO - Checking existence of video s3F1a1yUQoI in Qdrant...
+2025-08-21 11:38:05,391 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:38:05,401 - __streamlit_app__ - INFO - Video s3F1a1yUQoI already exists in the database
+2025-08-21 11:38:05,404 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:38:13,856 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:38:13,864 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:38:13,872 - __streamlit_app__ - INFO - Processing YouTube URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:38:13,873 - __youtube__ - INFO - Extracting video ID from URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:38:13,874 - __streamlit_app__ - INFO - Checking existence of video s3F1a1yUQoI in Qdrant...
+2025-08-21 11:38:14,370 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:38:14,372 - __streamlit_app__ - INFO - Video s3F1a1yUQoI already exists in the database
+2025-08-21 11:38:14,374 - __streamlit_app__ - INFO - Nouvelle session créée: 1f3ea89f-c2bd-4a26-929f-4e345d379cd9
+2025-08-21 11:38:14,374 - __streamlit_app__ - INFO - User question: De quoi parle la vidéo ?
+2025-08-21 11:38:14,377 - __streamlit_app__ - INFO - Searching for relevant chunks for: De quoi parle la vidéo ?
+2025-08-21 11:38:14,377 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'De quoi parle la vidéo ?'
+2025-08-21 11:38:14,377 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:38:14,391 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 11:38:14,391 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:38:21,196 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 11:38:21,900 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 11:38:22,277 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:38:22,280 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 11:38:22,281 - __retrieve__ - INFO - Application du filtre pour la vidéo : s3F1a1yUQoI
+2025-08-21 11:38:22,282 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:38:22,282 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 11:38:22,537 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 400 Bad Request"
+2025-08-21 11:38:22,542 - __streamlit_app__ - ERROR - Error generating response: Unexpected Response: 400 (Bad Request)
+Raw response content:
+b'{"status":{"error":"Bad request: Index required but not found for \\"embedding_model\\" of one of the following types: [keyword]. Help: Create an index for this key or use a different filter."},"time ...'
+2025-08-21 11:38:22,545 - __mongo__ - INFO - Mise à jour de la conversation 1f3ea89f-c2bd-4a26-929f-4e345d379cd9 avec 2 nouveaux messages
+2025-08-21 11:38:22,662 - __mongo__ - INFO - Conversation 1f3ea89f-c2bd-4a26-929f-4e345d379cd9 mise à jour avec succès
+2025-08-21 11:38:22,664 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:43:20,388 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:43:20,415 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:43:20,435 - __streamlit_app__ - INFO - Processing YouTube URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:43:20,436 - __youtube__ - INFO - Extracting video ID from URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:43:20,437 - __streamlit_app__ - INFO - Checking existence of video s3F1a1yUQoI in Qdrant...
+2025-08-21 11:43:20,908 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:43:20,921 - __streamlit_app__ - INFO - Video s3F1a1yUQoI already exists in the database
+2025-08-21 11:43:20,927 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:43:26,822 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:43:26,828 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:43:26,836 - __streamlit_app__ - INFO - Processing YouTube URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:43:26,836 - __youtube__ - INFO - Extracting video ID from URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:43:26,838 - __streamlit_app__ - INFO - Checking existence of video s3F1a1yUQoI in Qdrant...
+2025-08-21 11:43:27,251 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:43:27,259 - __streamlit_app__ - INFO - Video s3F1a1yUQoI already exists in the database
+2025-08-21 11:43:27,264 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:43:30,442 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:43:30,451 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:43:30,463 - __streamlit_app__ - INFO - Processing YouTube URL: https://youtu.be/s3F1a1yUQoIhttps://youtu.be/s3F1a1yUQoI
+2025-08-21 11:43:30,463 - __youtube__ - INFO - Extracting video ID from URL: https://youtu.be/s3F1a1yUQoIhttps://youtu.be/s3F1a1yUQoI
+2025-08-21 11:43:30,464 - __streamlit_app__ - INFO - Checking existence of video s3F1a1yUQoIhttps://youtu.be/s3F1a1yUQoI in Qdrant...
+2025-08-21 11:43:30,599 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:43:30,602 - __streamlit_app__ - INFO - Video s3F1a1yUQoIhttps://youtu.be/s3F1a1yUQoI not found, starting ingestion...
+2025-08-21 11:43:30,603 - __streamlit_app__ - INFO - Fetching transcript for s3F1a1yUQoIhttps://youtu.be/s3F1a1yUQoI
+2025-08-21 11:43:33,302 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:43:33,305 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:43:33,316 - __streamlit_app__ - INFO - Processing YouTube URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:43:33,316 - __youtube__ - INFO - Extracting video ID from URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:43:33,317 - __streamlit_app__ - INFO - Checking existence of video s3F1a1yUQoI in Qdrant...
+2025-08-21 11:43:33,449 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:43:33,451 - __streamlit_app__ - INFO - Video s3F1a1yUQoI already exists in the database
+2025-08-21 11:43:33,456 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:43:39,915 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:43:39,926 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:43:39,935 - __streamlit_app__ - INFO - Processing YouTube URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:43:39,935 - __youtube__ - INFO - Extracting video ID from URL: https://youtu.be/s3F1a1yUQoI
+2025-08-21 11:43:39,936 - __streamlit_app__ - INFO - Checking existence of video s3F1a1yUQoI in Qdrant...
+2025-08-21 11:43:40,330 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:43:40,332 - __streamlit_app__ - INFO - Video s3F1a1yUQoI already exists in the database
+2025-08-21 11:43:40,336 - __streamlit_app__ - INFO - User question: De quoi parle la vidéo ?
+2025-08-21 11:43:40,340 - __streamlit_app__ - INFO - Searching for relevant chunks for: De quoi parle la vidéo ?
+2025-08-21 11:43:40,340 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'De quoi parle la vidéo ?'
+2025-08-21 11:43:40,341 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:43:40,349 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 11:43:40,350 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:43:53,770 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 11:43:55,635 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 11:43:56,047 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:43:56,061 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 11:43:56,061 - __retrieve__ - INFO - Application du filtre pour la vidéo : s3F1a1yUQoI
+2025-08-21 11:43:56,073 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:43:56,076 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 11:43:56,354 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 400 Bad Request"
+2025-08-21 11:43:56,375 - __streamlit_app__ - ERROR - Error generating response: Unexpected Response: 400 (Bad Request)
+Raw response content:
+b'{"status":{"error":"Bad request: Index required but not found for \\"embedding_model\\" of one of the following types: [keyword]. Help: Create an index for this key or use a different filter."},"time ...'
+2025-08-21 11:43:56,380 - __mongo__ - INFO - Mise à jour de la conversation 1f3ea89f-c2bd-4a26-929f-4e345d379cd9 avec 2 nouveaux messages
+2025-08-21 11:43:56,498 - __mongo__ - INFO - Conversation 1f3ea89f-c2bd-4a26-929f-4e345d379cd9 mise à jour avec succès
+2025-08-21 11:43:56,500 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:44:31,550 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:44:31,554 - __mongo__ - INFO - Connexion à MongoDB: mongodb+srv://reporting:ChNNKat9xpZpPOYg@cluster0.z4sob.mongodb.net/
+2025-08-21 11:44:34,516 - __mongo__ - INFO - Connexion MongoDB établie avec succès
+2025-08-21 11:44:35,741 - __streamlit_app__ - INFO - ConversationManager initialisé
+2025-08-21 11:44:36,018 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:44:36,061 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:44:42,457 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:44:42,458 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:44:42,461 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:44:42,461 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:44:42,461 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:44:42,884 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:44:42,890 - __streamlit_app__ - INFO - Video r0WIJo4GA20 not found, starting ingestion...
+2025-08-21 11:44:42,892 - __streamlit_app__ - INFO - Fetching transcript for r0WIJo4GA20
+2025-08-21 11:44:45,611 - __streamlit_app__ - INFO - Transcript fetched in language 'en'
+2025-08-21 11:44:45,611 - __streamlit_app__ - INFO - Transcript retrieved (1490 segments)
+2025-08-21 11:44:45,614 - __streamlit_app__ - INFO - Saving transcript for r0WIJo4GA20
+2025-08-21 11:44:45,616 - __youtube__ - INFO - Saving TXT to r0WIJo4GA20.txt
+2025-08-21 11:44:45,619 - __youtube__ - INFO - Saved TXT to ../downloads/r0WIJo4GA20.txt
+2025-08-21 11:44:45,619 - __streamlit_app__ - INFO - Transcript saved to ./downloads/r0WIJo4GA20.txt
+2025-08-21 11:44:45,621 - __streamlit_app__ - INFO - Processing and storing r0WIJo4GA20 in Qdrant using model sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:44:45,623 - __streamlit_app__ - ERROR - Error processing video r0WIJo4GA20: process_and_store_transcript_txt() got an unexpected keyword argument 'embedding_model_name'
+2025-08-21 11:44:45,625 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:45:48,026 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:45:48,192 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:45:48,267 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:45:48,267 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:45:48,276 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:45:49,917 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:45:49,981 - __streamlit_app__ - INFO - Video r0WIJo4GA20 not found, starting ingestion...
+2025-08-21 11:45:49,987 - __streamlit_app__ - INFO - Fetching transcript for r0WIJo4GA20
+2025-08-21 11:45:51,675 - __streamlit_app__ - INFO - Transcript fetched in language 'en'
+2025-08-21 11:45:51,675 - __streamlit_app__ - INFO - Transcript retrieved (1490 segments)
+2025-08-21 11:45:51,677 - __streamlit_app__ - INFO - Saving transcript for r0WIJo4GA20
+2025-08-21 11:45:51,677 - __youtube__ - INFO - Saving TXT to r0WIJo4GA20.txt
+2025-08-21 11:45:51,678 - __youtube__ - INFO - Saved TXT to ../downloads/r0WIJo4GA20.txt
+2025-08-21 11:45:51,678 - __streamlit_app__ - INFO - Transcript saved to ./downloads/r0WIJo4GA20.txt
+2025-08-21 11:45:51,680 - __streamlit_app__ - INFO - Processing and storing r0WIJo4GA20 in Qdrant using model sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:45:51,680 - __embedding__ - INFO - Starting processing for TXT file: ./downloads/r0WIJo4GA20.txt
+2025-08-21 11:45:51,685 - __embedding__ - INFO - Loaded text from ./downloads/r0WIJo4GA20.txt, length: 55114 chars
+2025-08-21 11:45:51,686 - __embedding__ - INFO - Splitting text into chunks (size=700, overlap=100)
+2025-08-21 11:45:51,821 - __embedding__ - INFO - Text split into 91 chunks
+2025-08-21 11:45:51,821 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:45:52,007 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 11:45:52,007 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:46:04,682 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 11:46:04,686 - __embedding__ - INFO - Embedding 91 text chunks
+2025-08-21 11:46:10,056 - __embedding__ - INFO - Embedded 91 text chunks
+2025-08-21 11:46:10,584 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 11:46:10,960 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:46:11,012 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 11:46:11,143 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:46:11,144 - __qdrant__ - INFO - Collection 'youtube_transcripts' already exists.
+2025-08-21 11:46:11,144 - __qdrant__ - INFO - Creating index on payload field 'video_id'
+2025-08-21 11:46:11,492 - httpx - INFO - HTTP Request: PUT https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/index?wait=true "HTTP/1.1 200 OK"
+2025-08-21 11:46:11,861 - __qdrant__ - INFO - Creating index on payload field 'embedding_model'
+2025-08-21 11:46:12,104 - httpx - INFO - HTTP Request: PUT https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/index?wait=true "HTTP/1.1 200 OK"
+2025-08-21 11:46:12,105 - __qdrant__ - INFO - Upserting 91 points into collection 'youtube_transcripts'
+2025-08-21 11:46:19,078 - httpx - INFO - HTTP Request: PUT https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points?wait=true "HTTP/1.1 200 OK"
+2025-08-21 11:46:19,092 - __qdrant__ - INFO - Successfully upserted points into collection 'youtube_transcripts'
+2025-08-21 11:46:19,092 - __embedding__ - INFO - Finished processing and storing 91 chunks from ./downloads/r0WIJo4GA20.txt
+2025-08-21 11:46:19,672 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:46:19,680 - __streamlit_app__ - INFO - Video r0WIJo4GA20 confirmed in Qdrant
+2025-08-21 11:46:19,784 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:46:26,332 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:46:26,361 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:46:26,378 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:46:26,378 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:46:26,379 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:46:27,031 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:46:27,059 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 11:46:27,060 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:46:34,972 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:46:34,986 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:46:34,991 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:46:34,991 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:46:34,992 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:46:35,423 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:46:35,428 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 11:46:35,430 - __streamlit_app__ - INFO - Nouvelle session créée: ed86db26-059f-40cd-ba30-653bb6b4cc43
+2025-08-21 11:46:35,430 - __streamlit_app__ - INFO - User question: De quoi parle la vidéo ?
+2025-08-21 11:46:35,432 - __streamlit_app__ - INFO - Searching for relevant chunks for: De quoi parle la vidéo ?
+2025-08-21 11:46:35,433 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'De quoi parle la vidéo ?'
+2025-08-21 11:46:35,433 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:46:35,442 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 11:46:35,442 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:46:48,943 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 11:46:50,026 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 11:46:50,412 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:46:50,417 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 11:46:50,417 - __retrieve__ - INFO - Application du filtre pour la vidéo : r0WIJo4GA20
+2025-08-21 11:46:50,418 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:46:50,419 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 11:46:50,667 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-21 11:46:50,698 - __retrieve__ - INFO - Retrieved 0 relevant chunks.
+2025-08-21 11:46:50,699 - __streamlit_app__ - INFO - Found 0 relevant chunks
+2025-08-21 11:46:50,709 - __streamlit_app__ - INFO - No relevant chunks found for the query
+2025-08-21 11:46:51,050 - __mongo__ - INFO - Mise à jour de la conversation ed86db26-059f-40cd-ba30-653bb6b4cc43 avec 2 nouveaux messages
+2025-08-21 11:46:51,172 - __mongo__ - INFO - Conversation ed86db26-059f-40cd-ba30-653bb6b4cc43 mise à jour avec succès
+2025-08-21 11:46:51,177 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:50:37,964 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:50:38,004 - __mongo__ - INFO - Connexion à MongoDB: mongodb+srv://reporting:ChNNKat9xpZpPOYg@cluster0.z4sob.mongodb.net/
+2025-08-21 11:50:40,573 - __mongo__ - INFO - Connexion MongoDB établie avec succès
+2025-08-21 11:50:40,694 - __streamlit_app__ - INFO - ConversationManager initialisé
+2025-08-21 11:50:40,790 - __streamlit_app__ - INFO - Initialisation du client Qdrant...
+2025-08-21 11:50:41,546 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 11:50:41,929 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:50:41,933 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 11:50:41,934 - __streamlit_app__ - INFO - Client Qdrant initialisé
+2025-08-21 11:50:41,937 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:50:41,947 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:50:44,209 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:50:44,222 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:50:44,232 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:50:44,233 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:50:44,233 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:50:44,368 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:50:44,372 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 11:50:44,374 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:50:47,790 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:50:47,799 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:50:47,815 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:50:47,816 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:50:47,816 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:50:47,947 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:50:47,949 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 11:50:47,951 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:50:54,682 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:50:54,686 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:50:54,696 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:50:54,696 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:50:54,697 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:50:55,088 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:50:55,090 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 11:50:55,092 - __streamlit_app__ - INFO - Nouvelle session créée: 1187e9d8-eb2e-475f-9d8e-1ab52113af6e
+2025-08-21 11:50:55,092 - __streamlit_app__ - INFO - User question: De quoi parle la vidéo ?
+2025-08-21 11:50:55,095 - __streamlit_app__ - INFO - Searching for relevant chunks for: De quoi parle la vidéo ?
+2025-08-21 11:50:55,095 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'De quoi parle la vidéo ?'
+2025-08-21 11:50:55,095 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:51:02,350 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 11:51:02,351 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:51:07,518 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 11:51:09,242 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 11:51:09,638 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:51:09,641 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 11:51:09,641 - __retrieve__ - INFO - Application du filtre pour la vidéo : r0WIJo4GA20
+2025-08-21 11:51:09,642 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:51:09,643 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 11:51:09,896 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-21 11:51:09,903 - __retrieve__ - INFO - Retrieved 0 relevant chunks.
+2025-08-21 11:51:09,904 - __streamlit_app__ - INFO - Found 0 relevant chunks
+2025-08-21 11:51:09,911 - __streamlit_app__ - INFO - No relevant chunks found for the query
+2025-08-21 11:51:10,250 - __mongo__ - INFO - Mise à jour de la conversation 1187e9d8-eb2e-475f-9d8e-1ab52113af6e avec 2 nouveaux messages
+2025-08-21 11:51:10,361 - __mongo__ - INFO - Conversation 1187e9d8-eb2e-475f-9d8e-1ab52113af6e mise à jour avec succès
+2025-08-21 11:51:10,362 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:53:21,885 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:53:21,921 - __mongo__ - INFO - Connexion à MongoDB: mongodb+srv://cz9bfytrr:WOBB5yiaSfUK5MS4@ride-share-project.66bv9jl.mongodb.net/naive-rag?retryWrites=true&w=majority
+2025-08-21 11:53:24,457 - __mongo__ - INFO - Connexion MongoDB établie avec succès
+2025-08-21 11:53:24,600 - __streamlit_app__ - INFO - ConversationManager initialisé
+2025-08-21 11:53:24,702 - __streamlit_app__ - INFO - Initialisation du client Qdrant...
+2025-08-21 11:53:25,125 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 11:53:25,502 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:53:25,507 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 11:53:25,507 - __streamlit_app__ - INFO - Client Qdrant initialisé
+2025-08-21 11:53:25,510 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:53:25,518 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:53:27,221 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:53:27,225 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:53:27,231 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:53:27,232 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:53:27,234 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:53:27,368 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:53:27,373 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 11:53:27,375 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:53:30,601 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:53:30,606 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:53:30,625 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:53:30,625 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:53:30,625 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:53:30,756 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:53:30,758 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 11:53:30,760 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:53:36,992 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:53:37,002 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:53:37,016 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:53:37,017 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:53:37,017 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:53:37,415 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:53:37,417 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 11:53:37,418 - __streamlit_app__ - INFO - Nouvelle session créée: a2c172a9-8992-4f7f-b4ae-51f172227a3d
+2025-08-21 11:53:37,418 - __streamlit_app__ - INFO - User question: De quoi parle la vidéo ?
+2025-08-21 11:53:37,421 - __streamlit_app__ - INFO - Searching for relevant chunks for: De quoi parle la vidéo ?
+2025-08-21 11:53:37,421 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'De quoi parle la vidéo ?'
+2025-08-21 11:53:37,421 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:53:45,361 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 11:53:45,361 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:53:51,205 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 11:53:52,536 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 11:53:52,916 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:53:52,920 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 11:53:52,920 - __retrieve__ - INFO - Application du filtre pour la vidéo : r0WIJo4GA20
+2025-08-21 11:53:52,921 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:53:52,922 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 11:53:53,175 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-21 11:53:53,180 - __retrieve__ - INFO - Retrieved 0 relevant chunks.
+2025-08-21 11:53:53,183 - __streamlit_app__ - INFO - Found 0 relevant chunks
+2025-08-21 11:53:53,188 - __streamlit_app__ - INFO - No relevant chunks found for the query
+2025-08-21 11:53:53,529 - __mongo__ - INFO - Mise à jour de la conversation a2c172a9-8992-4f7f-b4ae-51f172227a3d avec 2 nouveaux messages
+2025-08-21 11:53:53,643 - __mongo__ - INFO - Conversation a2c172a9-8992-4f7f-b4ae-51f172227a3d mise à jour avec succès
+2025-08-21 11:53:53,644 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:55:11,053 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:55:11,073 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:55:11,085 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:55:11,085 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:55:11,085 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:55:11,509 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:55:11,516 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 11:55:11,520 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:55:15,984 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:55:16,010 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:55:16,018 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:55:16,018 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:55:16,019 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:55:16,176 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:55:16,179 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 11:55:16,181 - __streamlit_app__ - INFO - User question: De quoi parle la vidéo ?
+2025-08-21 11:55:16,182 - __streamlit_app__ - INFO - Searching for relevant chunks for: De quoi parle la vidéo ?
+2025-08-21 11:55:16,182 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'De quoi parle la vidéo ?'
+2025-08-21 11:55:16,182 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:55:16,185 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 11:55:16,186 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:55:23,280 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 11:55:24,147 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 11:55:24,525 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:55:24,531 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 11:55:24,531 - __retrieve__ - INFO - Application du filtre pour la vidéo : r0WIJo4GA20
+2025-08-21 11:55:24,533 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:55:24,533 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 11:55:24,775 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-21 11:55:24,777 - __retrieve__ - INFO - Retrieved 0 relevant chunks.
+2025-08-21 11:55:24,778 - __streamlit_app__ - INFO - Found 0 relevant chunks
+2025-08-21 11:55:24,781 - __streamlit_app__ - INFO - No relevant chunks found for the query
+2025-08-21 11:55:25,118 - __mongo__ - INFO - Mise à jour de la conversation a2c172a9-8992-4f7f-b4ae-51f172227a3d avec 2 nouveaux messages
+2025-08-21 11:55:25,233 - __mongo__ - INFO - Conversation a2c172a9-8992-4f7f-b4ae-51f172227a3d mise à jour avec succès
+2025-08-21 11:55:25,234 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:56:14,099 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:56:14,128 - __mongo__ - INFO - Connexion à MongoDB: mongodb+srv://cz9bfytrr:WOBB5yiaSfUK5MS4@ride-share-project.66bv9jl.mongodb.net/naive-rag?retryWrites=true&w=majority
+2025-08-21 11:56:17,136 - __mongo__ - INFO - Connexion MongoDB établie avec succès
+2025-08-21 11:56:17,280 - __streamlit_app__ - INFO - ConversationManager initialisé
+2025-08-21 11:56:17,378 - __streamlit_app__ - INFO - Initialisation du client Qdrant...
+2025-08-21 11:56:17,795 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 11:56:18,192 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:56:18,197 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 11:56:18,197 - __streamlit_app__ - INFO - Client Qdrant initialisé
+2025-08-21 11:56:18,201 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:56:18,212 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:56:20,110 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:56:20,113 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:56:20,124 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:56:20,125 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:56:20,125 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:56:20,267 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:56:20,270 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 11:56:20,273 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:56:29,730 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:56:29,734 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:56:29,740 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:56:29,740 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:56:29,741 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:56:30,130 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:56:30,132 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 11:56:30,133 - __streamlit_app__ - INFO - Nouvelle session créée: f976468d-dce8-467d-a39d-21cd634b6038
+2025-08-21 11:56:30,133 - __streamlit_app__ - INFO - User question: De quoi parle la vidéo ?
+2025-08-21 11:56:30,136 - __streamlit_app__ - INFO - Searching for relevant chunks for: De quoi parle la vidéo ?
+2025-08-21 11:56:30,136 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'De quoi parle la vidéo ?'
+2025-08-21 11:56:30,136 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:56:36,828 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 11:56:36,828 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:56:42,426 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 11:56:43,699 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 11:56:44,081 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:56:44,085 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 11:56:44,085 - __retrieve__ - INFO - Application du filtre pour la vidéo : r0WIJo4GA20
+2025-08-21 11:56:44,086 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:56:44,087 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 11:56:44,345 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-21 11:56:44,352 - __retrieve__ - INFO - Retrieved 0 relevant chunks.
+2025-08-21 11:56:44,354 - __streamlit_app__ - INFO - Found 0 relevant chunks
+2025-08-21 11:56:44,357 - __streamlit_app__ - INFO - No relevant chunks found for the query
+2025-08-21 11:56:44,700 - __mongo__ - INFO - Mise à jour de la conversation f976468d-dce8-467d-a39d-21cd634b6038 avec 2 nouveaux messages
+2025-08-21 11:56:44,811 - __mongo__ - INFO - Conversation f976468d-dce8-467d-a39d-21cd634b6038 mise à jour avec succès
+2025-08-21 11:56:44,813 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:57:41,933 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:57:41,965 - __mongo__ - INFO - Connexion à MongoDB: mongodb+srv://cz9bfytrr:WOBB5yiaSfUK5MS4@ride-share-project.66bv9jl.mongodb.net/naive-rag?retryWrites=true&w=majority
+2025-08-21 11:57:44,584 - __mongo__ - INFO - Connexion MongoDB établie avec succès
+2025-08-21 11:57:44,711 - __streamlit_app__ - INFO - ConversationManager initialisé
+2025-08-21 11:57:44,821 - __streamlit_app__ - INFO - Initialisation du client Qdrant...
+2025-08-21 11:57:45,244 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 11:57:45,646 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:57:45,651 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 11:57:45,651 - __streamlit_app__ - INFO - Client Qdrant initialisé
+2025-08-21 11:57:45,654 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:57:45,661 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:57:50,166 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:57:50,175 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:57:50,196 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:57:50,196 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:57:50,196 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:57:50,333 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:57:50,341 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 11:57:50,342 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:57:56,885 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:57:56,904 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:57:56,917 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:57:56,918 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:57:56,920 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:57:57,320 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:57:57,322 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 11:57:57,324 - __streamlit_app__ - INFO - Nouvelle session créée: cc3b693f-6398-4bea-ba6b-f9225d089d45
+2025-08-21 11:57:57,324 - __streamlit_app__ - INFO - User question: De quoi parle la vidéo ?
+2025-08-21 11:57:57,327 - __streamlit_app__ - INFO - Searching for relevant chunks for: De quoi parle la vidéo ?
+2025-08-21 11:57:57,327 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'De quoi parle la vidéo ?'
+2025-08-21 11:57:57,328 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:58:04,367 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 11:58:04,368 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:58:09,923 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 11:58:11,055 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 11:58:11,469 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:58:11,472 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 11:58:11,472 - __retrieve__ - INFO - Application du filtre pour la vidéo : r0WIJo4GA20
+2025-08-21 11:58:11,473 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:58:11,474 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 11:58:11,725 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-21 11:58:11,743 - __retrieve__ - INFO - Retrieved 0 relevant chunks.
+2025-08-21 11:58:11,744 - __streamlit_app__ - INFO - Found 0 relevant chunks
+2025-08-21 11:58:11,748 - __streamlit_app__ - INFO - No relevant chunks found for the query
+2025-08-21 11:58:12,077 - __mongo__ - INFO - Mise à jour de la conversation cc3b693f-6398-4bea-ba6b-f9225d089d45 avec 2 nouveaux messages
+2025-08-21 11:58:12,193 - __mongo__ - INFO - Conversation cc3b693f-6398-4bea-ba6b-f9225d089d45 mise à jour avec succès
+2025-08-21 11:58:12,194 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:59:15,101 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:59:15,140 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:59:15,144 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:59:15,144 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:59:15,144 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:59:15,613 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:59:15,620 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 11:59:15,624 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 11:59:23,470 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 11:59:23,480 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 11:59:23,492 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:59:23,492 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 11:59:23,493 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 11:59:23,891 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 11:59:23,892 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 11:59:23,895 - __streamlit_app__ - INFO - User question: De quoi parle la vidéo ?
+2025-08-21 11:59:23,898 - __streamlit_app__ - INFO - Searching for relevant chunks for: De quoi parle la vidéo ?
+2025-08-21 11:59:23,899 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'De quoi parle la vidéo ?'
+2025-08-21 11:59:23,899 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:59:23,903 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 11:59:23,904 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:59:30,140 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 11:59:30,856 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 11:59:31,243 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:59:31,256 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 11:59:31,259 - __retrieve__ - INFO - Application du filtre pour la vidéo : r0WIJo4GA20
+2025-08-21 11:59:31,259 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 11:59:31,260 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 11:59:31,500 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-21 11:59:31,501 - __retrieve__ - INFO - Retrieved 0 relevant chunks.
+2025-08-21 11:59:31,504 - __streamlit_app__ - INFO - Found 0 relevant chunks
+2025-08-21 11:59:31,512 - __streamlit_app__ - INFO - No relevant chunks found for the query
+2025-08-21 11:59:31,860 - __mongo__ - INFO - Mise à jour de la conversation cc3b693f-6398-4bea-ba6b-f9225d089d45 avec 2 nouveaux messages
+2025-08-21 11:59:31,973 - __mongo__ - INFO - Conversation cc3b693f-6398-4bea-ba6b-f9225d089d45 mise à jour avec succès
+2025-08-21 11:59:31,975 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:00:25,789 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:00:25,818 - __mongo__ - INFO - Connexion à MongoDB: mongodb+srv://cz9bfytrr:WOBB5yiaSfUK5MS4@ride-share-project.66bv9jl.mongodb.net/naive-rag?retryWrites=true&w=majority
+2025-08-21 12:00:28,966 - __mongo__ - INFO - Connexion MongoDB établie avec succès
+2025-08-21 12:00:29,113 - __streamlit_app__ - INFO - ConversationManager initialisé
+2025-08-21 12:00:29,227 - __streamlit_app__ - INFO - Initialisation du client Qdrant...
+2025-08-21 12:00:29,647 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 12:00:30,035 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 12:00:30,038 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 12:00:30,038 - __streamlit_app__ - INFO - Client Qdrant initialisé
+2025-08-21 12:00:30,040 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:00:30,048 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:00:36,436 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:00:36,440 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:00:36,451 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:00:36,452 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:00:36,453 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 12:00:36,873 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:00:36,884 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 12:00:36,886 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:00:42,609 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:00:42,620 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:00:42,636 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:00:42,636 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:00:42,637 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 12:00:43,019 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:00:43,021 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 12:00:43,026 - __streamlit_app__ - INFO - Nouvelle session créée: 213d525b-eb70-4234-af5a-48166b931d56
+2025-08-21 12:00:43,026 - __streamlit_app__ - INFO - User question: De quoi parle la vidéo ?
+2025-08-21 12:00:43,029 - __streamlit_app__ - INFO - Searching for relevant chunks for: De quoi parle la vidéo ?
+2025-08-21 12:00:43,030 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'De quoi parle la vidéo ?'
+2025-08-21 12:00:43,030 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:00:50,264 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 12:00:50,265 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:00:56,119 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 12:00:57,603 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 12:00:58,019 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 12:00:58,031 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 12:00:58,032 - __retrieve__ - INFO - Application du filtre pour la vidéo : r0WIJo4GA20
+2025-08-21 12:00:58,037 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:00:58,039 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 12:00:58,325 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-21 12:00:58,344 - __retrieve__ - INFO - Retrieved 0 relevant chunks.
+2025-08-21 12:00:58,360 - __streamlit_app__ - INFO - Found 0 relevant chunks
+2025-08-21 12:00:58,374 - __streamlit_app__ - INFO - No relevant chunks found for the query
+2025-08-21 12:00:58,722 - __mongo__ - INFO - Mise à jour de la conversation 213d525b-eb70-4234-af5a-48166b931d56 avec 2 nouveaux messages
+2025-08-21 12:00:58,841 - __mongo__ - INFO - Conversation 213d525b-eb70-4234-af5a-48166b931d56 mise à jour avec succès
+2025-08-21 12:00:58,846 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:03:58,419 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:03:58,434 - __mongo__ - INFO - Connexion à MongoDB: mongodb+srv://cz9bfytrr:WOBB5yiaSfUK5MS4@ride-share-project.66bv9jl.mongodb.net/naive-rag?retryWrites=true&w=majority
+2025-08-21 12:04:00,844 - __mongo__ - INFO - Connexion MongoDB établie avec succès
+2025-08-21 12:04:00,967 - __streamlit_app__ - INFO - ConversationManager initialisé
+2025-08-21 12:04:00,978 - __streamlit_app__ - INFO - Initialisation du client Qdrant...
+2025-08-21 12:04:01,672 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 12:04:02,067 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 12:04:02,071 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 12:04:02,071 - __streamlit_app__ - INFO - Client Qdrant initialisé
+2025-08-21 12:04:02,075 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:04:02,086 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:04:15,455 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:04:15,484 - __mongo__ - INFO - Connexion à MongoDB: mongodb+srv://cz9bfytrr:WOBB5yiaSfUK5MS4@ride-share-project.66bv9jl.mongodb.net
+2025-08-21 12:04:16,804 - __mongo__ - INFO - Connexion MongoDB établie avec succès
+2025-08-21 12:04:16,920 - __streamlit_app__ - INFO - ConversationManager initialisé
+2025-08-21 12:04:17,047 - __streamlit_app__ - INFO - Initialisation du client Qdrant...
+2025-08-21 12:04:17,498 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 12:04:17,894 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 12:04:17,898 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 12:04:17,898 - __streamlit_app__ - INFO - Client Qdrant initialisé
+2025-08-21 12:04:17,901 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:04:17,912 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:04:24,206 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:04:24,211 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:04:24,229 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:04:24,229 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:04:24,230 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 12:04:24,658 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:04:24,665 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 12:04:24,668 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:04:28,723 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:04:28,729 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:04:28,739 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:04:28,739 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:04:28,740 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 12:04:28,880 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:04:28,882 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 12:04:28,884 - __streamlit_app__ - INFO - Nouvelle session créée: 62fd0ad7-1af4-452c-bdf0-72fe432fbfd2
+2025-08-21 12:04:28,885 - __streamlit_app__ - INFO - User question: test
+2025-08-21 12:04:28,887 - __streamlit_app__ - INFO - Searching for relevant chunks for: test
+2025-08-21 12:04:28,887 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'test'
+2025-08-21 12:04:28,887 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:04:35,912 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 12:04:35,912 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:04:41,705 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 12:04:44,769 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 12:04:45,153 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 12:04:45,157 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 12:04:45,157 - __retrieve__ - INFO - Application du filtre pour la vidéo : r0WIJo4GA20
+2025-08-21 12:04:45,157 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:04:45,157 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 12:04:45,418 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-21 12:04:45,426 - __retrieve__ - INFO - Retrieved 0 relevant chunks.
+2025-08-21 12:04:45,428 - __streamlit_app__ - INFO - Found 0 relevant chunks
+2025-08-21 12:04:45,433 - __streamlit_app__ - INFO - No relevant chunks found for the query
+2025-08-21 12:04:45,773 - __mongo__ - INFO - Mise à jour de la conversation 62fd0ad7-1af4-452c-bdf0-72fe432fbfd2 avec 2 nouveaux messages
+2025-08-21 12:04:45,896 - __mongo__ - INFO - Conversation 62fd0ad7-1af4-452c-bdf0-72fe432fbfd2 mise à jour avec succès
+2025-08-21 12:04:45,898 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:10:10,819 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:10:10,850 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:10:10,889 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:10:10,889 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:10:10,890 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 12:10:11,357 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:10:11,815 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 12:10:11,824 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:10:15,089 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:10:15,096 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:10:15,103 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:10:15,104 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:10:15,104 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 12:10:15,248 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:10:15,250 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 12:10:15,252 - __streamlit_app__ - INFO - User question: Test
+2025-08-21 12:10:15,254 - __streamlit_app__ - INFO - Searching for relevant chunks for: Test
+2025-08-21 12:10:15,255 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'Test'
+2025-08-21 12:10:15,255 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:10:15,265 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 12:10:15,265 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:10:22,319 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 12:10:22,980 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 12:10:23,364 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 12:10:23,366 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 12:10:23,366 - __retrieve__ - INFO - Application du filtre pour la vidéo : r0WIJo4GA20
+2025-08-21 12:10:23,367 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:10:23,367 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 12:10:23,611 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-21 12:10:23,612 - __retrieve__ - INFO - Retrieved 0 relevant chunks.
+2025-08-21 12:10:23,614 - __streamlit_app__ - INFO - Found 0 relevant chunks
+2025-08-21 12:10:23,618 - __streamlit_app__ - INFO - No relevant chunks found for the query
+2025-08-21 12:10:23,958 - __mongo__ - INFO - Mise à jour de la conversation 62fd0ad7-1af4-452c-bdf0-72fe432fbfd2 avec 2 nouveaux messages
+2025-08-21 12:10:24,074 - __mongo__ - INFO - Conversation 62fd0ad7-1af4-452c-bdf0-72fe432fbfd2 mise à jour avec succès
+2025-08-21 12:10:24,076 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:11:33,424 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:11:33,457 - __mongo__ - INFO - Connexion à MongoDB: mongodb+srv://cz9bfytrr:WOBB5yiaSfUK5MS4@ride-share-project.66bv9jl.mongodb.net
+2025-08-21 12:11:35,968 - __mongo__ - INFO - Connexion MongoDB établie avec succès
+2025-08-21 12:11:36,098 - __streamlit_app__ - INFO - ConversationManager initialisé
+2025-08-21 12:11:36,206 - __streamlit_app__ - INFO - Initialisation du client Qdrant...
+2025-08-21 12:11:36,615 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 12:11:36,995 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 12:11:36,999 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 12:11:36,999 - __streamlit_app__ - INFO - Client Qdrant initialisé
+2025-08-21 12:11:37,001 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:11:37,008 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:11:43,022 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:11:43,034 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:11:43,061 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:11:43,061 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:11:43,062 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 12:11:43,446 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:11:43,456 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 12:11:43,458 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:11:48,391 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:11:48,400 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:11:48,406 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:11:48,406 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:11:48,407 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 12:11:48,550 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:11:48,552 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 12:11:48,553 - __streamlit_app__ - INFO - Nouvelle session créée: 60c0cb4f-2563-47dc-a4f3-eed7f5f7e04f
+2025-08-21 12:11:48,553 - __streamlit_app__ - INFO - User question: Test
+2025-08-21 12:11:48,555 - __streamlit_app__ - INFO - Searching for relevant chunks for: Test
+2025-08-21 12:11:48,556 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'Test'
+2025-08-21 12:11:48,556 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:11:55,191 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 12:11:55,191 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:12:00,292 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 12:12:01,507 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 12:12:01,893 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 12:12:01,899 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 12:12:01,899 - __retrieve__ - INFO - Application du filtre pour la vidéo : r0WIJo4GA20
+2025-08-21 12:12:01,901 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:12:01,901 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 12:12:02,154 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-21 12:12:02,163 - __retrieve__ - INFO - Retrieved 0 relevant chunks.
+2025-08-21 12:12:02,165 - __streamlit_app__ - INFO - Found 0 relevant chunks
+2025-08-21 12:12:02,173 - __streamlit_app__ - INFO - No relevant chunks found for the query
+2025-08-21 12:12:02,519 - __mongo__ - INFO - Mise à jour de la conversation 60c0cb4f-2563-47dc-a4f3-eed7f5f7e04f avec 2 nouveaux messages
+2025-08-21 12:12:02,638 - __mongo__ - INFO - Conversation 60c0cb4f-2563-47dc-a4f3-eed7f5f7e04f mise à jour avec succès
+2025-08-21 12:12:02,639 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:16:01,805 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:16:01,830 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:16:01,839 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:16:01,839 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=r0WIJo4GA20
+2025-08-21 12:16:01,839 - __streamlit_app__ - INFO - Checking existence of video r0WIJo4GA20 in Qdrant...
+2025-08-21 12:16:02,316 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:16:02,330 - __streamlit_app__ - INFO - Video r0WIJo4GA20 already exists in the database
+2025-08-21 12:16:02,335 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:16:17,012 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:16:17,023 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:16:17,029 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:16:17,030 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:16:17,030 - __streamlit_app__ - INFO - Checking existence of video VGphODdrtKU in Qdrant...
+2025-08-21 12:16:17,455 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:16:17,460 - __streamlit_app__ - INFO - Video VGphODdrtKU not found, starting ingestion...
+2025-08-21 12:16:17,462 - __streamlit_app__ - INFO - Fetching transcript for VGphODdrtKU
+2025-08-21 12:16:19,128 - __streamlit_app__ - INFO - Transcript fetched in language 'en'
+2025-08-21 12:16:19,128 - __streamlit_app__ - INFO - Transcript retrieved (603 segments)
+2025-08-21 12:16:19,130 - __streamlit_app__ - INFO - Saving transcript for VGphODdrtKU
+2025-08-21 12:16:19,130 - __youtube__ - INFO - Saving TXT to VGphODdrtKU.txt
+2025-08-21 12:16:19,131 - __youtube__ - INFO - Saved TXT to ../downloads/VGphODdrtKU.txt
+2025-08-21 12:16:19,131 - __streamlit_app__ - INFO - Transcript saved to ./downloads/VGphODdrtKU.txt
+2025-08-21 12:16:19,133 - __streamlit_app__ - INFO - Processing and storing VGphODdrtKU in Qdrant using model sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:16:19,133 - __embedding__ - INFO - Starting processing for TXT file: ./downloads/VGphODdrtKU.txt
+2025-08-21 12:16:19,135 - __embedding__ - INFO - Loaded text from ./downloads/VGphODdrtKU.txt, length: 21337 chars
+2025-08-21 12:16:19,135 - __embedding__ - INFO - Splitting text into chunks (size=700, overlap=100)
+2025-08-21 12:16:19,141 - __embedding__ - INFO - Text split into 36 chunks
+2025-08-21 12:16:19,141 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:16:19,151 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 12:16:19,152 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:16:25,743 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 12:16:25,744 - __embedding__ - INFO - Embedding 36 text chunks
+2025-08-21 12:16:27,706 - __embedding__ - INFO - Embedded 36 text chunks
+2025-08-21 12:16:28,139 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 12:16:28,522 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 12:16:28,525 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 12:16:28,655 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 12:16:28,656 - __qdrant__ - INFO - Collection 'youtube_transcripts' already exists.
+2025-08-21 12:16:28,656 - __qdrant__ - INFO - Creating index on payload field 'video_id'
+2025-08-21 12:16:28,821 - httpx - INFO - HTTP Request: PUT https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/index?wait=true "HTTP/1.1 200 OK"
+2025-08-21 12:16:28,829 - __qdrant__ - INFO - Creating index on payload field 'embedding_model'
+2025-08-21 12:16:28,992 - httpx - INFO - HTTP Request: PUT https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/index?wait=true "HTTP/1.1 200 OK"
+2025-08-21 12:16:28,992 - __qdrant__ - INFO - Upserting 36 points into collection 'youtube_transcripts'
+2025-08-21 12:16:29,795 - httpx - INFO - HTTP Request: PUT https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points?wait=true "HTTP/1.1 200 OK"
+2025-08-21 12:16:29,796 - __qdrant__ - INFO - Successfully upserted points into collection 'youtube_transcripts'
+2025-08-21 12:16:29,797 - __embedding__ - INFO - Finished processing and storing 36 chunks from ./downloads/VGphODdrtKU.txt
+2025-08-21 12:16:30,193 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:16:30,193 - __streamlit_app__ - INFO - Video VGphODdrtKU confirmed in Qdrant
+2025-08-21 12:16:30,198 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:16:38,083 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:16:38,091 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:16:38,097 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:16:38,098 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:16:38,098 - __streamlit_app__ - INFO - Checking existence of video VGphODdrtKU in Qdrant...
+2025-08-21 12:16:38,496 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:16:38,500 - __streamlit_app__ - INFO - Video VGphODdrtKU already exists in the database
+2025-08-21 12:16:38,503 - __streamlit_app__ - INFO - Conversation reset requested
+2025-08-21 12:16:38,503 - __mongo__ - INFO - Sauvegarde de la conversation a34cbd4e-7f79-47e4-9cd4-fc36d51f5d7c pour la vidéo VGphODdrtKU
+2025-08-21 12:16:38,625 - __mongo__ - INFO - Conversation a34cbd4e-7f79-47e4-9cd4-fc36d51f5d7c sauvegardée avec succès
+2025-08-21 12:16:38,625 - __streamlit_app__ - INFO - Conversation terminée sauvegardée avec ID: a34cbd4e-7f79-47e4-9cd4-fc36d51f5d7c
+2025-08-21 12:16:38,626 - __streamlit_app__ - INFO - Nouvelle session créée après réinitialisation: 1bdd3529-99b1-4e00-a9ce-b196d62e0335
+2025-08-21 12:16:38,839 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:16:38,839 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:16:38,841 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:16:38,842 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:16:38,842 - __streamlit_app__ - INFO - Checking existence of video VGphODdrtKU in Qdrant...
+2025-08-21 12:16:38,995 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:16:38,996 - __streamlit_app__ - INFO - Video VGphODdrtKU already exists in the database
+2025-08-21 12:16:38,997 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:16:47,896 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:16:47,905 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:16:47,912 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:16:47,912 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:16:47,913 - __streamlit_app__ - INFO - Checking existence of video VGphODdrtKU in Qdrant...
+2025-08-21 12:16:48,317 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:16:48,321 - __streamlit_app__ - INFO - Video VGphODdrtKU already exists in the database
+2025-08-21 12:16:48,323 - __streamlit_app__ - INFO - User question: De quoi parle la vidéo ?
+2025-08-21 12:16:48,326 - __streamlit_app__ - INFO - Searching for relevant chunks for: De quoi parle la vidéo ?
+2025-08-21 12:16:48,327 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'De quoi parle la vidéo ?'
+2025-08-21 12:16:48,327 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:16:48,335 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 12:16:48,335 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:16:54,114 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 12:16:55,049 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 12:16:55,443 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 12:16:55,446 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 12:16:55,446 - __retrieve__ - INFO - Application du filtre pour la vidéo : VGphODdrtKU
+2025-08-21 12:16:55,447 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:16:55,447 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 12:16:55,703 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-21 12:16:55,713 - __retrieve__ - INFO - Retrieved 10 relevant chunks.
+2025-08-21 12:16:55,715 - __streamlit_app__ - INFO - Found 10 relevant chunks
+2025-08-21 12:16:55,724 - __streamlit_app__ - INFO - Generating response with model openai/gpt-oss-120b
+2025-08-21 12:16:55,725 - __query__ - INFO - Construction du prompt pour la question: 'De quoi parle la vidéo ?'
+2025-08-21 12:16:55,726 - __query__ - INFO - Appel à Grok pour générer la réponse...
+2025-08-21 12:16:55,728 - __grok__ - INFO - Generating answer with Groq model 'openai/gpt-oss-120b'
+2025-08-21 12:16:55,740 - __grok__ - INFO - Groq client created
+2025-08-21 12:16:58,624 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 12:16:58,647 - __grok__ - INFO - Answer generated successfully.
+2025-08-21 12:16:58,647 - __query__ - INFO - Réponse générée avec succès.
+2025-08-21 12:16:58,647 - __streamlit_app__ - INFO - Response generated successfully
+2025-08-21 12:17:07,631 - __mongo__ - INFO - Mise à jour de la conversation 1bdd3529-99b1-4e00-a9ce-b196d62e0335 avec 2 nouveaux messages
+2025-08-21 12:17:07,746 - __mongo__ - INFO - Conversation 1bdd3529-99b1-4e00-a9ce-b196d62e0335 mise à jour avec succès
+2025-08-21 12:17:07,748 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:17:56,465 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:17:56,483 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:17:56,487 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:17:56,487 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:17:56,487 - __streamlit_app__ - INFO - Checking existence of video VGphODdrtKU in Qdrant...
+2025-08-21 12:17:56,925 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:17:56,930 - __streamlit_app__ - INFO - Video VGphODdrtKU already exists in the database
+2025-08-21 12:17:56,934 - __streamlit_app__ - INFO - User question: D'accord
+2025-08-21 12:17:56,935 - __streamlit_app__ - INFO - Searching for relevant chunks for: D'accord
+2025-08-21 12:17:56,936 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'D'accord'
+2025-08-21 12:17:56,936 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:17:56,949 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 12:17:56,949 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:18:03,300 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 12:18:04,148 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 12:18:04,526 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 12:18:04,532 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 12:18:04,532 - __retrieve__ - INFO - Application du filtre pour la vidéo : VGphODdrtKU
+2025-08-21 12:18:04,532 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:18:04,533 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 12:18:05,037 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-21 12:18:05,041 - __retrieve__ - INFO - Retrieved 10 relevant chunks.
+2025-08-21 12:18:05,042 - __streamlit_app__ - INFO - Found 10 relevant chunks
+2025-08-21 12:18:05,048 - __streamlit_app__ - INFO - Generating response with model openai/gpt-oss-120b
+2025-08-21 12:18:05,049 - __query__ - INFO - Construction du prompt pour la question: 'D'accord'
+2025-08-21 12:18:05,050 - __query__ - INFO - Appel à Grok pour générer la réponse...
+2025-08-21 12:18:05,051 - __grok__ - INFO - Generating answer with Groq model 'openai/gpt-oss-120b'
+2025-08-21 12:18:05,077 - __grok__ - INFO - Groq client created
+2025-08-21 12:18:06,215 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 12:18:06,223 - __grok__ - INFO - Answer generated successfully.
+2025-08-21 12:18:06,223 - __query__ - INFO - Réponse générée avec succès.
+2025-08-21 12:18:06,223 - __streamlit_app__ - INFO - Response generated successfully
+2025-08-21 12:18:07,270 - __mongo__ - INFO - Mise à jour de la conversation 1bdd3529-99b1-4e00-a9ce-b196d62e0335 avec 2 nouveaux messages
+2025-08-21 12:18:07,382 - __mongo__ - INFO - Conversation 1bdd3529-99b1-4e00-a9ce-b196d62e0335 mise à jour avec succès
+2025-08-21 12:18:07,386 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:18:55,862 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:18:55,875 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:18:55,884 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:18:55,884 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:18:55,885 - __streamlit_app__ - INFO - Checking existence of video VGphODdrtKU in Qdrant...
+2025-08-21 12:18:56,300 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:18:56,306 - __streamlit_app__ - INFO - Video VGphODdrtKU already exists in the database
+2025-08-21 12:18:56,311 - __streamlit_app__ - INFO - User question: test
+2025-08-21 12:18:56,314 - __streamlit_app__ - INFO - Searching for relevant chunks for: test
+2025-08-21 12:18:56,314 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'test'
+2025-08-21 12:18:56,314 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:18:56,319 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 12:18:56,320 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:19:02,531 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 12:19:03,347 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 12:19:03,743 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 12:19:03,750 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 12:19:03,750 - __retrieve__ - INFO - Application du filtre pour la vidéo : VGphODdrtKU
+2025-08-21 12:19:03,752 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:19:03,753 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 12:19:04,014 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-21 12:19:04,030 - __retrieve__ - INFO - Retrieved 10 relevant chunks.
+2025-08-21 12:19:04,031 - __streamlit_app__ - INFO - Found 10 relevant chunks
+2025-08-21 12:19:04,042 - __streamlit_app__ - INFO - Generating response with model openai/gpt-oss-120b
+2025-08-21 12:19:04,043 - __query__ - INFO - Construction du prompt pour la question: 'test'
+2025-08-21 12:19:04,044 - __query__ - INFO - Appel à Grok pour générer la réponse...
+2025-08-21 12:19:04,044 - __grok__ - INFO - Generating answer with Groq model 'openai/gpt-oss-120b'
+2025-08-21 12:19:04,052 - __grok__ - INFO - Groq client created
+2025-08-21 12:19:05,144 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 12:19:05,149 - __grok__ - INFO - Answer generated successfully.
+2025-08-21 12:19:05,150 - __query__ - INFO - Réponse générée avec succès.
+2025-08-21 12:19:05,150 - __streamlit_app__ - INFO - Response generated successfully
+2025-08-21 12:19:06,792 - __mongo__ - INFO - Mise à jour de la conversation 1bdd3529-99b1-4e00-a9ce-b196d62e0335 avec 2 nouveaux messages
+2025-08-21 12:19:06,908 - __mongo__ - INFO - Conversation 1bdd3529-99b1-4e00-a9ce-b196d62e0335 mise à jour avec succès
+2025-08-21 12:19:06,909 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:19:49,343 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:19:49,385 - __mongo__ - INFO - Connexion à MongoDB: mongodb+srv://cz9bfytrr:WOBB5yiaSfUK5MS4@ride-share-project.66bv9jl.mongodb.net
+2025-08-21 12:19:51,999 - __mongo__ - INFO - Connexion MongoDB établie avec succès
+2025-08-21 12:19:52,120 - __streamlit_app__ - INFO - ConversationManager initialisé
+2025-08-21 12:19:52,231 - __streamlit_app__ - INFO - Initialisation du client Qdrant...
+2025-08-21 12:19:52,644 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 12:19:53,043 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 12:19:53,046 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 12:19:53,046 - __streamlit_app__ - INFO - Client Qdrant initialisé
+2025-08-21 12:19:53,048 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:19:53,054 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:19:56,839 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:19:56,842 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:19:56,847 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:19:56,848 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:19:56,850 - __streamlit_app__ - INFO - Checking existence of video VGphODdrtKU in Qdrant...
+2025-08-21 12:19:56,990 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:19:56,995 - __streamlit_app__ - INFO - Video VGphODdrtKU already exists in the database
+2025-08-21 12:19:56,998 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:19:59,508 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:19:59,510 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:19:59,517 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:19:59,518 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:19:59,518 - __streamlit_app__ - INFO - Checking existence of video VGphODdrtKU in Qdrant...
+2025-08-21 12:19:59,648 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:19:59,651 - __streamlit_app__ - INFO - Video VGphODdrtKU already exists in the database
+2025-08-21 12:19:59,652 - __streamlit_app__ - INFO - End of Streamlit application render
+2025-08-21 12:20:06,188 - __streamlit_app__ - INFO - Démarrage de l'application Streamlit
+2025-08-21 12:20:06,192 - __streamlit_app__ - INFO - Clients Qdrant et YouTubeTranscriptApi initialisés avec succès
+2025-08-21 12:20:06,201 - __streamlit_app__ - INFO - Processing YouTube URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:20:06,201 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=VGphODdrtKU
+2025-08-21 12:20:06,202 - __streamlit_app__ - INFO - Checking existence of video VGphODdrtKU in Qdrant...
+2025-08-21 12:20:06,598 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/count "HTTP/1.1 200 OK"
+2025-08-21 12:20:06,601 - __streamlit_app__ - INFO - Video VGphODdrtKU already exists in the database
+2025-08-21 12:20:06,604 - __streamlit_app__ - INFO - Nouvelle session créée: 41c3a490-622b-4119-ac1e-5e4c3b05efd9
+2025-08-21 12:20:06,604 - __streamlit_app__ - INFO - User question: De quoi parle la vidéo ?
+2025-08-21 12:20:06,607 - __streamlit_app__ - INFO - Searching for relevant chunks for: De quoi parle la vidéo ?
+2025-08-21 12:20:06,607 - __retrieve__ - INFO - Recherche de chunks pertinents pour la requête : 'De quoi parle la vidéo ?'
+2025-08-21 12:20:06,607 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:20:12,626 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-08-21 12:20:12,626 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:20:17,860 - __embedding__ - INFO - Model sentence-transformers/all-mpnet-base-v2 loaded
+2025-08-21 12:20:19,246 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 12:20:19,637 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 12:20:19,640 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 12:20:19,640 - __retrieve__ - INFO - Application du filtre pour la vidéo : VGphODdrtKU
+2025-08-21 12:20:19,641 - __retrieve__ - INFO - Application du filtre pour le modèle d'embedding : sentence-transformers/all-mpnet-base-v2
+2025-08-21 12:20:19,641 - __retrieve__ - INFO - Lancement de la recherche dans la collection 'youtube_transcripts'
+2025-08-21 12:20:19,896 - httpx - INFO - HTTP Request: POST https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/points/search "HTTP/1.1 200 OK"
+2025-08-21 12:20:19,904 - __retrieve__ - INFO - Retrieved 10 relevant chunks.
+2025-08-21 12:20:19,906 - __streamlit_app__ - INFO - Found 10 relevant chunks
+2025-08-21 12:20:19,920 - __streamlit_app__ - INFO - Generating response with model openai/gpt-oss-20b
+2025-08-21 12:20:19,920 - __query__ - INFO - Construction du prompt pour la question: 'De quoi parle la vidéo ?'
+2025-08-21 12:20:19,921 - __query__ - INFO - Appel à Grok pour générer la réponse...
+2025-08-21 12:20:19,921 - __grok__ - INFO - Generating answer with Groq model 'openai/gpt-oss-20b'
+2025-08-21 12:20:19,936 - __grok__ - INFO - Groq client created
+2025-08-21 12:20:21,412 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 12:20:21,433 - __grok__ - INFO - Answer generated successfully.
+2025-08-21 12:20:21,433 - __query__ - INFO - Réponse générée avec succès.
+2025-08-21 12:20:21,434 - __streamlit_app__ - INFO - Response generated successfully
+2025-08-21 12:20:28,164 - __mongo__ - INFO - Mise à jour de la conversation 41c3a490-622b-4119-ac1e-5e4c3b05efd9 avec 2 nouveaux messages
+2025-08-21 12:20:28,165 - __mongo__ - INFO - Nouveaux messages: [{'role': 'user', 'content': 'De quoi parle la vidéo ?'}, {'role': 'assistant', 'content': '**Introduction**  \nLa vidéo est un guide de préparation aux entretiens techniques pour les postes de développeur ou d’ingénieur logiciel. Le créateur partage ses propres expériences d’entretiens (Google, Amazon, etc.) et donne des conseils pratiques sur la façon de se préparer, de maximiser les chances grâce aux références et d’utiliser des ressources en ligne.\n\n**Points principaux abordés**\n\n| Thème | Détails issus du transcript |\n|-------|-----------------------------|\n| **Références (referrals)** | L’importance de “level up on the referral” pour passer directement à un entretien sans file d’attente. Il recommande d’appliquer à des postes publiés dans les 48\u202fh pour éviter la concurrence. |\n| **Types d’entretiens** | 3 catégories : <br>•\u202fComportementaux (behavioral)<br>•\u202fTechniques (coding) <br>•\u202fConception de systèmes (system design) |\n| **Ressources de préparation** | •\u202fYouTube (ex. Node.io, chaînes dédiées à la résolution de problèmes)<br>•\u202fAlgoExpert.io pour les DS/algos<br>•\u202fLeetCode.io (particulièrement les problèmes récents de Google, Amazon, etc.) |\n| **Anecdotes personnelles** | •\u202fInterviewur qui a interrompu l’entretien pour livrer un colis.<br>•\u202fRéussite de l’entretien “Word Search 2” après avoir regardé la vidéo correspondante.<br>•\u202fÉchec d’un entretien et suivi par un autre recruteur Amazon. |\n| **Stratégie de préparation** | Combiner visionnage de vidéos (pas de surcharge de problèmes) et pratique via des mock interviews avec des amis. |\n| **Mention de Pua** | Pua, une grande YouTuber tech, est invitée à la vidéo. Le créateur encourage les spectateurs à visiter sa chaîne. |\n\n**Conclusion**  \nLa vidéo est donc un tutoriel complet pour les candidats tech qui souhaitent optimiser leurs chances d’obtenir un poste (Google, Amazon, etc.) en comprenant les différentes étapes d’un entretien, en utilisant efficacement les références et en se préparant avec les bonnes ressources.**Introduction** La vidéo est un guide de préparation aux entretiens techniques pour les postes de développeur ou d’ingénieur logiciel. Le créateur partage ses propres expériences d’entretiens (Google, Amazon, etc.) et donne des conseils pratiques sur la façon de se préparer, de maximiser les chances grâce aux références et d’utiliser des ressources en ligne. **Points principaux abordés** | Thème | Détails issus du transcript | |-------|-----------------------------| | **Références (referrals)** | L’importance de “level up on the referral” pour passer directement à un entretien sans file d’attente. Il recommande d’appliquer à des postes publiés dans les 48 h pour éviter la concurrence. | | **Types d’entretiens** | 3 catégories : <br>• Comportementaux (behavioral)<br>• Techniques (coding) <br>• Conception de systèmes (system design) | | **Ressources de préparation** | • YouTube (ex. Node.io, chaînes dédiées à la résolution de problèmes)<br>• AlgoExpert.io pour les DS/algos<br>• LeetCode.io (particulièrement les problèmes récents de Google, Amazon, etc.) | | **Anecdotes personnelles** | • Interviewur qui a interrompu l’entretien pour livrer un colis.<br>• Réussite de l’entretien “Word Search 2” après avoir regardé la vidéo correspondante.<br>• Échec d’un entretien et suivi par un autre recruteur Amazon. | | **Stratégie de préparation** | Combiner visionnage de vidéos (pas de surcharge de problèmes) et pratique via des mock interviews avec des amis. | | **Mention de Pua** | Pua, une grande YouTuber tech, est invitée à la vidéo. Le créateur encourage les spectateurs à visiter sa chaîne. | **Conclusion** La vidéo est donc un tutoriel complet pour les candidats tech qui souhaitent optimiser leurs chances d’obtenir un poste (Google, Amazon, etc.) en comprenant les différentes étapes d’un entretien, en utilisant efficacement les références et en se préparant avec les bonnes ressources. '}]
+2025-08-21 12:20:28,279 - __mongo__ - INFO - Conversation 41c3a490-622b-4119-ac1e-5e4c3b05efd9 mise à jour avec succès
+2025-08-21 12:20:28,281 - __streamlit_app__ - INFO - End of Streamlit application render

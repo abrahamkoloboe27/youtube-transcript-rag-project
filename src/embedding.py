@@ -78,7 +78,8 @@ def process_and_store_transcript_txt(
     collection_name: str,
     video_id: str,
     chunk_size: int = 700,
-    chunk_overlap: int = 100
+    chunk_overlap: int = 100,
+    embedding_model_name: str = EMBEDDING_MODEL_NAME,
 ):
     """
     Processes a TXT transcript file: loads, splits, embeds, and stores in Qdrant.
@@ -121,7 +122,8 @@ def process_and_store_transcript_txt(
         payload = {
             "video_id": video_id,
             "chunk_index": i,
-            "text": chunk # Optionnel: stocker le texte brut
+            "text": chunk, # Optionnel: stocker le texte brut
+            "embedding_model": embedding_model_name,
             # Ajouter d'autres métadonnées si nécessaire (titre, timestamp, etc.)
         }
         point = PointStruct(id=point_id, vector=vector, payload=payload)

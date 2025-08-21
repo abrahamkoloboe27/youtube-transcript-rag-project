@@ -1,5 +1,3 @@
-# retrieve.py
-
 from src.loggings import configure_logging
 from src.embedding import get_embedding_model
 from src.qdrant import get_qdrant_client
@@ -15,7 +13,7 @@ def retrieve_relevant_chunks(
     query: str,
     collection_name: str = DEFAULT_COLLECTION_NAME,
     video_id: Optional[str] = None,
-    language_code: Optional[str] = None,
+    embedding_model_name: str = "sentence-transformers/all-mpnet-base-v2",
     top_k: int = 5
 ) -> List[Dict]:
     """
@@ -25,7 +23,7 @@ def retrieve_relevant_chunks(
         query (str): La question de l'utilisateur.
         collection_name (str): Nom de la collection Qdrant.
         video_id (Optional[str]): Si spécifié, filtre les résultats par vidéo.
-        language_code (Optional[str]): Si spécifié, filtre par langue.
+        embedding_model_name (str): Le nom du modèle d'embedding utilisé pour la requête.
         top_k (int): Nombre de résultats à retourner.
 
     Returns:
@@ -33,8 +31,8 @@ def retrieve_relevant_chunks(
     """
     logger.info(f"Recherche de chunks pertinents pour la requête : '{query}'")
 
-    # 1. Charger le modèle d'embedding
-    embedding_model = get_embedding_model()
+    # 1. Charger le modèle d'embedding (en passant le nom du modèle)
+    embedding_model = get_embedding_model(model_name=embedding_model_name)
 
     # 2. Embedder la requête
     query_vector = embedding_model.embed_query(query)
@@ -55,14 +53,15 @@ def retrieve_relevant_chunks(
             )
         )
     
-    # if language_code:
-    #     logger.info(f"Application du filtre pour la langue : {language_code}")
-    #     query_filter_conditions.append(
-    #         FieldCondition(
-    #             key="language",
-    #             match=MatchValue(value=language_code)
-    #         )
-    #     )
+    # AJOUT : Filtrer par le modèle d'embedding utilisé
+    if embedding_model_name:
+        logger.info(f"Application du filtre pour le modèle d'embedding : {embedding_model_name}")
+        query_filter_conditions.append(
+            FieldCondition(
+                key="embedding_model",
+                match=MatchValue(value=embedding_model_name)
+            )
+        )
 
     query_filter = None
     if query_filter_conditions:
@@ -86,7 +85,8 @@ def retrieve_relevant_chunks(
             "score": point.score,
             "text": point.payload.get("text", ""),
             "video_id": point.payload.get("video_id", ""),
-            "language": point.payload.get("language", ""),
+            # Récupérer le modèle d'embedding depuis le payload
+            "embedding_model": point.payload.get("embedding_model", embedding_model_name),
             "chunk_index": point.payload.get("chunk_index", -1)
         })
 

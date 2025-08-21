@@ -421,3 +421,22 @@
 2025-08-19 12:17:33,296 - __grok__ - INFO - Answer generated successfully.
 2025-08-19 12:17:33,296 - __query__ - INFO - Réponse générée avec succès.
 2025-08-19 12:17:33,297 - __main__ - INFO - === Fin du pipeline RAG ===
+2025-08-21 11:57:21,380 - __main__ - INFO - Hello from naive-rag!
+2025-08-21 11:57:21,861 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-08-21 11:57:22,246 - httpx - INFO - HTTP Request: GET https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-08-21 11:57:22,248 - __qdrant__ - INFO - Connected to Qdrant. Collections: collections=[CollectionDescription(name='midjourney'), CollectionDescription(name='youtube_transcripts'), CollectionDescription(name='star_charts')]
+2025-08-21 11:57:22,249 - __qdrant__ - INFO - Creating index on 'video_id' field for collection 'youtube_transcripts'...
+2025-08-21 11:57:22,420 - httpx - INFO - HTTP Request: PUT https://8944ab11-ce5f-4e99-9520-02d24272ba30.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/youtube_transcripts/index?wait=true "HTTP/1.1 200 OK"
+2025-08-21 11:57:22,422 - __qdrant__ - INFO - ✅ Successfully created 'video_id' index.
+2025-08-21 11:57:22,424 - __main__ - INFO - === Début de l'ingestion de la vidéo ===
+2025-08-21 11:57:22,424 - __youtube__ - INFO - Extracting video ID from URL: https://www.youtube.com/watch?v=94w6hPk7nkM
+2025-08-21 11:57:22,424 - __main__ - INFO - Traitement de la vidéo avec ID: 94w6hPk7nkM
+2025-08-21 11:57:24,816 - __main__ - INFO - Transcription récupérée pour la vidéo 94w6hPk7nkM
+2025-08-21 11:57:24,817 - __youtube__ - INFO - Saving TXT to 94w6hPk7nkM.txt
+2025-08-21 11:57:24,824 - __youtube__ - INFO - Saved TXT to ../downloads/94w6hPk7nkM.txt
+2025-08-21 11:57:24,825 - __main__ - INFO - Transcription sauvegardée dans ./downloads/94w6hPk7nkM.txt
+2025-08-21 11:57:24,825 - __embedding__ - INFO - Starting processing for TXT file: ./downloads/94w6hPk7nkM.txt
+2025-08-21 11:57:24,826 - __embedding__ - INFO - Loaded text from ./downloads/94w6hPk7nkM.txt, length: 235287 chars
+2025-08-21 11:57:24,826 - __embedding__ - INFO - Splitting text into chunks (size=700, overlap=100)
+2025-08-21 11:57:24,834 - __embedding__ - INFO - Text split into 391 chunks
+2025-08-21 11:57:24,834 - __embedding__ - INFO - Loading model sentence-transformers/all-mpnet-base-v2

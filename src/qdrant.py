@@ -23,10 +23,9 @@ def get_qdrant_client() -> QdrantClient:
     logger.info(f"Connected to Qdrant. Collections: {qdrant_client.get_collections()}")
     return qdrant_client
 
-
 def create_collection_if_not_exists(client: QdrantClient, collection_name: str, vector_size: int, distance: Distance = Distance.COSINE):
     """
-    Creates a collection in Qdrant if it doesn't already exist.
+    Creates a collection in Qdrant if it doesn't already exist and ensures required indexes are present.
 
     Args:
         client: The Qdrant client.
@@ -43,23 +42,43 @@ def create_collection_if_not_exists(client: QdrantClient, collection_name: str, 
             vectors_config=VectorParams(size=vector_size, distance=distance),
         )
 
-        # Create index on video_id field for fast filtering
+        # Créer les index nécessaires
+        _create_required_indexes(client, collection_name)
+    else:
+        logger.info(f"Collection '{collection_name}' already exists.")
+        # Vérifier et créer les index si nécessaire (utile si la collection existait avant l'ajout de ces index)
+        # Note: Qdrant ne permet pas de lister facilement les index existants, donc on tente de les créer
+        # et on capture les erreurs si ils existent déjà.
+        _create_required_indexes(client, collection_name)
+        
+        
+def _create_required_indexes(client: QdrantClient, collection_name: str):
+    """Helper function to create required payload indexes.
+    Args:
+        client: The Qdrant client.
+        collection_name: The name of the collection.
+        
+        embedding_model_name: The name of the embedding model.
+    """
+    try:
         logger.info(f"Creating index on payload field 'video_id'")
         client.create_payload_index(
             collection_name=collection_name,
             field_name="video_id",
             field_schema=PayloadSchemaType.KEYWORD
         )
-        
-        # Create index on language field
-        logger.info(f"Creating index on payload field 'language'")
+    except Exception as e:
+        logger.debug(f"Could not create index on 'video_id' (might already exist): {e}")
+    
+    try:
+        logger.info(f"Creating index on payload field 'embedding_model'")
         client.create_payload_index(
             collection_name=collection_name,
-            field_name="language",
+            field_name="embedding_model",
             field_schema=PayloadSchemaType.KEYWORD
         )
-    else:
-        logger.info(f"Collection '{collection_name}' already exists.")
+    except Exception as e:
+        logger.debug(f"Could not create index on 'embedding_model' (might already exist): {e}")
 
 
 def create_video_id_index(client: QdrantClient, collection_name: str):
