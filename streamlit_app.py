@@ -261,11 +261,39 @@ for message in st.session_state.messages:
 if prompt := st.chat_input("Ask a question about the video...", 
                           disabled=not st.session_state.video_processed):
     
-    # Générer un ID de session si ce n'est pas déjà fait
+    logger.info(f"Received user prompt: {prompt}")
+    
+    # Générer un ID de session ET créer la conversation si ce n'est pas déjà fait
     if not st.session_state.session_id:
         if st.session_state.conversation_manager:
             st.session_state.session_id = st.session_state.conversation_manager.generate_session_id()
             logger.info(f"Nouvelle session créée: {st.session_state.session_id}")
+            
+            # Tenter de créer la conversation initiale
+            try:
+                session_id_created = st.session_state.conversation_manager.create_conversation(
+                    video_id=st.session_state.current_video_id or "unknown",
+                    messages=[], # Commencer avec une liste vide
+                    metadata={
+                        "response_language": st.session_state.response_language,
+                        "model_used": selected_model,
+                        "temperature": st.session_state.temperature,
+                        "max_tokens": st.session_state.max_tokens
+                    },
+                    session_id=st.session_state.session_id  # Passer l'ID existant
+                )
+                # Vérifier si l'ID retourné correspond (bonne pratique défensive)
+                if session_id_created == st.session_state.session_id:
+                    logger.info(f"✅ Conversation initiale créée avec succès pour la session {st.session_state.session_id}")
+                else:
+                    logger.warning(f"⚠️ Incohérence d'ID de session: généré={st.session_state.session_id}, créé={session_id_created}")
+            except Exception as e:
+                error_msg = f"❌ Échec de la création de la conversation initiale: {e}"
+                logger.error(error_msg)
+                # Optionnel: Afficher l'erreur à l'utilisateur
+                # st.sidebar.error(error_msg)
+        else:
+            logger.warning("ConversationManager non disponible lors de la création de session")
     
     logger.info(f"User question: {prompt}")
     # Ajouter le message utilisateur
@@ -338,58 +366,67 @@ if prompt := st.chat_input("Ask a question about the video...",
     logger.debug("Response added to history")
     
     # Sauvegarder la conversation dans MongoDB
-    if st.session_state.conversation_manager:
+    if st.session_state.conversation_manager and st.session_state.session_id and full_response:
         try:
-            if st.session_state.session_id:
-                # Mettre à jour une conversation existante
-                new_messages = [
-                    {"role": "user", "content": prompt},
-                    {"role": "assistant", "content": full_response}
-                ]
-                st.session_state.conversation_manager.update_conversation(
-                    st.session_state.session_id, 
-                    new_messages
-                )
-            else:
-                # Créer une nouvelle conversation (cas où session_id n'existe pas encore)
-                # Normalement, il devrait déjà être créé, mais on le fait au cas où
-                st.session_state.session_id = st.session_state.conversation_manager.generate_session_id()
-                logger.info(f"Création d'une nouvelle conversation (au cas où): {st.session_state.session_id}")
-                
+            # Ajouter les deux nouveaux messages (user + assistant)
+            new_messages = [
+                {"role": "user", "content": prompt},
+                {"role": "assistant", "content": full_response}
+            ]
+            st.session_state.conversation_manager.add_messages_to_conversation(
+                st.session_state.session_id, 
+                new_messages
+            )
         except Exception as e:
             logger.error(f"Erreur lors de la sauvegarde de la conversation: {e}")
-
 
 # Bouton pour réinitialiser la conversation
 if st.sidebar.button("🗑️ Reset Conversation"):
     logger.info("Conversation reset requested")
     
-    # Sauvegarder la conversation actuelle AVANT de réinitialiser
-    if (st.session_state.conversation_manager and 
-        st.session_state.session_id and 
-        len(st.session_state.messages) > 0):
-        try:
-            # Créer une nouvelle conversation complète
-            session_id = st.session_state.conversation_manager.save_conversation(
-                video_id=st.session_state.current_video_id or "unknown",
-                messages=st.session_state.messages,
-                metadata={
-                    "response_language": st.session_state.response_language,
-                    "model_used": selected_model, # Le modèle sélectionné
-                    "temperature": st.session_state.temperature,
-                    "max_tokens": st.session_state.max_tokens
-                }
-            )
-            logger.info(f"Conversation terminée sauvegardée avec ID: {session_id}")
-        except Exception as e:
-            logger.error(f"Erreur lors de la sauvegarde finale de la conversation: {e}")
-    
-    # Réinitialiser uniquement les messages et générer un nouvel ID de session
+    # Réinitialiser les messages et générer un nouvel ID de session
     st.session_state.messages = []
+    
     if st.session_state.conversation_manager:
+        # Générer un nouvel ID de session
+        old_session_id = st.session_state.session_id
         st.session_state.session_id = st.session_state.conversation_manager.generate_session_id()
         logger.info(f"Nouvelle session créée après réinitialisation: {st.session_state.session_id}")
+        
+        # Créer la nouvelle conversation vide
+        try:
+            st.session_state.conversation_manager.create_conversation(
+                video_id=st.session_state.current_video_id or "unknown",
+                messages=[],
+                metadata={
+                    "response_language": st.session_state.response_language,
+                    "model_used": selected_model,
+                    "temperature": st.session_state.temperature,
+                    "max_tokens": st.session_state.max_tokens
+                },
+                session_id=st.session_state.session_id  # Passer l'ID existant
+            )
+            logger.info(f"Nouvelle conversation créée pour la session {st.session_state.session_id}")
+        except Exception as e:
+            logger.error(f"Erreur lors de la création de la nouvelle conversation: {e}")
     
     st.rerun()
+
+# === DEBUG ===
+if st.sidebar.checkbox("🔍 Debug Conversation"):
+    st.write("### État de la session")
+    st.write(f"- Session ID: `{st.session_state.session_id}`")
+    st.write(f"- Nombre de messages: `{len(st.session_state.messages)}`")
+    
+    if st.session_state.session_id and st.session_state.conversation_manager:
+        try:
+            conv = st.session_state.conversation_manager.get_conversation(st.session_state.session_id)
+            if conv:
+                st.success("✅ Conversation trouvée dans MongoDB")
+                st.json(conv) # Affiche le contenu brut
+            else:
+                st.warning("⚠️ Session ID présent mais conversation NON trouvée dans MongoDB")
+        except Exception as e:
+            st.error(f"Erreur lors du debug: {e}")
 
 logger.info("End of Streamlit application render")
