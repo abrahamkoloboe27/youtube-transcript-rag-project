@@ -9,59 +9,8 @@ from src.retrieve import retrieve_relevant_chunks
 from src.query import answer_question_with_grok
 from youtube_transcript_api import YouTubeTranscriptApi
 from src.loggings import configure_logging
-from src.loggings import set_client_info_function
 import os
 import time
-
-
-# === RÉCUPÉRATION DES INFORMATIONS CLIENT ===
-def get_streamlit_client_info():
-    """
-    Récupère les informations du client depuis Streamlit.
-    Note: Streamlit limite l'accès à certaines informations pour des raisons de sécurité.
-    """
-    try:
-        # Tentative de récupération de l'IP (limitée sur Streamlit Cloud)
-        client_ip = "unknown"  # Streamlit Cloud masque souvent l'IP réelle
-        
-        # Récupération de l'user agent via st.context (si disponible)
-        user_agent = "unknown"
-        try:
-            # Méthode pour les versions récentes de Streamlit
-            from streamlit.runtime import get_instance
-            from streamlit.runtime.scriptrunner import get_script_run_ctx
-            
-            ctx = get_script_run_ctx()
-            if ctx and hasattr(ctx, 'session_id'):
-                # L'IP n'est généralement pas accessible directement
-                # On peut utiliser l'ID de session comme identifiant
-                session_info = get_instance()._session_info_by_id.get(ctx.session_id)
-                if session_info:
-                    # Certaines informations peuvent être disponibles dans session_info
-                    pass
-        except:
-            pass
-            
-        return {
-            'client_ip': client_ip,
-            'user_agent': st.context.headers.get('User-Agent', 'unknown') if hasattr(st, 'context') and hasattr(st.context, 'headers') else 'unknown',
-            'session_id': st.session_state.get('session_id', 'unknown'),
-            'video_id': st.session_state.get('current_video_id', 'unknown')
-        }
-    except Exception as e:
-        return {
-            'client_ip': 'unknown',
-            'user_agent': 'unknown',
-            'session_id': st.session_state.get('session_id', 'unknown'),
-            'video_id': st.session_state.get('current_video_id', 'unknown'),
-            'error': str(e)
-        }
-
-
-# === CONFIGURATION DU LOGGING CLIENT INFO ===
-# Définir la fonction qui récupère les infos client
-set_client_info_function(get_streamlit_client_info)
-
 
 # Configuration du logging
 logger = configure_logging(log_file="streamlit_app.log", logger_name="__streamlit_app__")
